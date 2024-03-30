@@ -1,0 +1,15 @@
+/* # Fonts
+* [reference] https://www.webfx.com/blog/web-design/google-font-api-guide/
+*/
+@import url('https://fonts.googleapis.com/css?family=Nunito|Noto+Serif+SC');
+
+.font-family-primary{
+	font-family: "Nunito" !important;
+}
+
+// font-family for specific lang
+html:lang(zh-CN) {
+	.font-family-primary {
+		font-family: "Noto Serif SC" !important;
+	}
+}

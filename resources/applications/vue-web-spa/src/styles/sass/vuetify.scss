@@ -1,0 +1,77 @@
+// vuetify
+
+// main
+
+// input
+.__input-dense {
+	.v-input__slot{
+		min-height: 32px !important; // 32 is the min
+	}
+	.v-input__append-inner{
+		margin-top: 5px !important;
+	}
+}
+
+
+// // table
+// .glowable-row {
+// 	.v-data-table__wrapper{
+// 		overflow-x: unset !important;
+// 		overflow-y: unset !important;
+// 	}
+// 	tbody tr {
+// 		&:hover{
+// 			transform: scale(1.02);
+// 		}
+// 		transition: all .3s ease-in-out;
+// 		border-radius: 10px;
+// 	}
+// }
+
+.row-gap{
+	background: transparent !important;
+	table {
+		border-collapse: separate;
+    	border-spacing: 0 0.5em !important;
+		th, td{
+			border-bottom:unset !important;
+			&:first-child{
+				border-top-left-radius: 6px;
+				border-bottom-left-radius: 6px;
+			}
+			&:last-child{
+				border-top-right-radius: 6px;
+				border-bottom-right-radius: 6px;
+			}
+		}
+	}
+    &.theme--light tr{
+	    background-color: #fff;
+	    color: #000000de;
+	    &:hover{
+	    	background: #fff !important;
+	    }
+    }
+    &.theme--dark tr{
+	    background-color: #1e1e1e;
+	    color: #fff;
+	    &:hover{
+	    	background: #1e1e1e !important;
+	    }
+    }
+	.v-data-footer{
+		border-top:unset !important;
+	}
+}
+
+// dialog
+.v-dialog--right{
+	transition-duration: 0.5s !important;
+	width: 50%;
+	left: unset;
+	right: 0;
+}
+
+.v-divider{
+	margin: auto;
+}

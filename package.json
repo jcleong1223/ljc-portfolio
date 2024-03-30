@@ -1,0 +1,22 @@
+{
+  "name": "nexus",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/bingweiyap/laravue-nexus.git"
+  },
+  "author": "bingweiyap",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/bingweiyap/laravue-nexus/issues"
+  },
+  "homepage": "https://gitlab.com/bingweiyap/laravue-nexus#readme",
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "swiper": "^9.2.4",
+    "vueperslides": "^2.16.0"
+  }
+}
