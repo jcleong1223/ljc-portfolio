@@ -14,7 +14,7 @@
 							:aspect-ratio="$vuetify.breakpoint.mdAndUp ? 8/3 : 1"
 						>
 							<v-overlay absolute>
-								<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto font-family-libre-baskerville text-h4' : 'ma-auto pa-auto font-family-libre-baskerville font-size-header'"><b>About Us</b></span>
+								<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto font-barlow text-h4' : 'ma-auto pa-auto font-barlow font-size-header'"><b>About Us</b></span>
 							</v-overlay>
 						</v-img>
 					</div>
@@ -29,7 +29,7 @@
 						:style="$vuetify.breakpoint.smAndDown ? 'background-image: url(/images/asset/aboutus1996.png); background-repeat: no-repeat; background-size: contain; background-position: center' : ''"
 						:class="$vuetify.breakpoint.smAndDown ? 'py-10' : ''"
 					>
-						<div class="font-weight-bold font-family-libre-baskerville font-size-title">
+						<div class="font-weight-bold font-barlow font-size-title">
 							K.P. Loo Engineering
 						</div>
 					</v-col>
@@ -52,7 +52,7 @@
 							justify="center"
 							align="center"
 						>
-							<span :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold text-h6 font-family-libre-baskerville' : 'font-weight-bold font-size-title font-family-libre-baskerville'">{{ content.title }}</span>
+							<span :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold text-h6 font-barlow' : 'font-weight-bold font-size-title font-barlow'">{{ content.title }}</span>
 							<v-card
 								eager
 								:class="$vuetify.breakpoint.smAndDown ? content.responsiveClass : content.class"
@@ -73,7 +73,7 @@
 			</section>
 
 			<section v-if="$vuetify.breakpoint.mdAndUp" style="background: black" class="py-15">
-				<div class="font-size-title white--text font-weight-bold font-family-libre-baskerville my-10 text-center">
+				<div class="font-size-title white--text font-weight-bold font-barlow my-10 text-center">
 					Our story & achievements
 				</div>
 				<v-timeline
@@ -100,7 +100,7 @@
 							</v-img>
 						</template>
 						<div class="pt-10" data-aos="zoom-in-down" data-aos-duration="2000">
-							<div class="font-weight-bold font-family-libre-baskerville font-size-title pb-5" v-text="year.year"></div>
+							<div class="font-weight-bold font-barlow font-size-title pb-5" v-text="year.year"></div>
 							<p class="font-family-inter text-justify font-size-text">
 								{{ year.description }}
 							</p>
@@ -117,7 +117,7 @@
 						<div class="pt-10 white--text">
 							<v-row class="mb-3 pl-3">
 								<v-icon :color="year.year == years[0].year ? '#DAA520' : 'white'">mdi-circle</v-icon>
-								<div class="align-self-center text-h4 font-weight-bold font-family-libre-baskerville pl-3" v-text="year.year"></div>
+								<div class="align-self-center text-h4 font-weight-bold font-barlow pl-3" v-text="year.year"></div>
 							</v-row>
 							<p class="text-justify">
 								{{ year.description }}
@@ -131,7 +131,7 @@
 					style="background-color:black;" class="px-7"
 				>
 					<div
-						class="text-h5 white--text font-weight-bold font-family-libre-baskerville my-10 text-center"
+						class="text-h5 white--text font-weight-bold font-barlow my-10 text-center"
 					>
 						Our story & achievements
 					</div>
@@ -153,7 +153,7 @@
 								>
 									mdi-checkbox-blank-circle
 								</v-icon>
-								<div class="text-h5 font-weight-bold font-family-libre-baskerville mx-4 my-6" v-text="year.year"></div>
+								<div class="text-h5 font-weight-bold font-barlow mx-4 my-6" v-text="year.year"></div>
 							</v-row>
 							<p class="text-justify mt-2 font-family-inter font-size-text">
 								{{ year.description }}
@@ -165,9 +165,9 @@
 
 			<section :class="$vuetify.breakpoint.smAndDown ? 'mt-10 pt-10' : 'mt-10 pt-10 pl-5'">
 				<!-- use <h1> tag, because text-hX is not working -->
-				<!-- <div class="mb-8 text-md-h5 font-weight-bold text-left font-family-libre-baskerville mx-16 px-16"><h1>Certificates</h1></div> -->
+				<!-- <div class="mb-8 text-md-h5 font-weight-bold text-left font-barlow mx-16 px-16"><h1>Certificates</h1></div> -->
 				<v-row align="center" class="justify-space-between mb-8 mx-5 px-md-10 px-3">
-					<span class="font-weight-bold text-left font-family-libre-baskerville font-size-title">Certificates</span>
+					<span class="font-weight-bold text-left font-barlow font-size-title">Certificates</span>
 					<div ref="certificatesTargetDiv" class="d-flex justify-center">
 					</div>
 				</v-row>
@@ -223,7 +223,7 @@
 					>
 						<template #content>
 							<div class="vueperslide__content-wrapper" @click="previewCert(certificate, i)">
-								<div class="vueperslide__title py-2 font-family-libre-baskerville font-weight-bold font-size-subtitle" :style="'background-color: #000000; color:white; width: 100%; position: absolute; bottom:0;'">{{ certificate.title }}</div>
+								<div class="vueperslide__title py-2 font-barlow font-weight-bold font-size-subtitle" :style="'background-color: #000000; color:white; width: 100%; position: absolute; bottom:0;'">{{ certificate.title }}</div>
 							</div>
 							<!-- <img :src="certificate.web_image.file_url" @click="previewCert(certificate)"> -->
 						</template>
@@ -242,7 +242,7 @@
 			activator="parent" :style="$vuetify.breakpoint.smAndDown ? 'width: 500px; box-shadow: none;' : 'width:500px; box-shadow: none;'"
 		>
 			<v-card color="black" class="ma-auto" :style="$vuetify.breakpoint.smAndDown ? 'width: 50%;' : 'width:50%;'">
-				<v-card-text class="white--text pt-5 font-family-libre-baskerville">
+				<v-card-text class="white--text pt-5 font-barlow">
 					<v-row>
 						<v-col col="10" class="py-1 pl-6 align-self-center">
 							<h3>{{ current_cert.title }}</h3>
@@ -268,7 +268,7 @@
 					:width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'"
 				>
 					<v-card color="black">
-						<v-card-text class="white--text pt-5 font-family-libre-baskerville">
+						<v-card-text class="white--text pt-5 font-barlow">
 							<v-row>
 								<v-col col="10" class="py-1 pl-6 align-self-center">
 									<h3>{{ current_cert.title }}</h3>

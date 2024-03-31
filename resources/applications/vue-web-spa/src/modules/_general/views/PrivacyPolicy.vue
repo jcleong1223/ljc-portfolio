@@ -2,7 +2,7 @@
 	<v-sheet>
 		<section :class="$vuetify.breakpoint.smAndDown ? 'mx-6' : ''">
 			<v-container :class="$vuetify.breakpoint.smAndDown ? 'py-10' : 'pt-16 mt-5 pb-10 text-justify'">
-				<div :class="$vuetify.breakpoint.smAndDown ? 'text-center text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-family-libre-baskerville' : 'text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-family-libre-baskerville'">Privacy Policy</div>
+				<div :class="$vuetify.breakpoint.smAndDown ? 'text-center text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-barlow' : 'text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-barlow'">Privacy Policy</div>
 				<span class="text-subtitle-1 font-weight-black pb-0">This privacy policy ("policy") outlines how KPLOO Engineering Sdn Bhd ("us", "we", "our") collects, uses, and protects your personal data when you visit and use our website ("www.kploo.com"). We reserve the right to change this policy at any time, and we encourage you to review this page regularly to stay up-to-date.</span>
 
 				<div class="justify-left my-10">

@@ -8,7 +8,7 @@
 						xs="12"
 						class="mx-auto px-16"
 					>
-						<div class="text-h5 my-8 text-md-h4 font-family-libre-baskerville">Contact Us</div>
+						<div class="text-h5 my-8 text-md-h4 font-barlow">Contact Us</div>
 						<v-text-field
 							v-model="form.name"
 							solo
@@ -86,7 +86,7 @@
 						xs="12"
 						class="mx-auto px-8"
 					>
-						<div class="text-h5 my-8 text-md-h4 font-family-libre-baskerville">Contact Us</div>
+						<div class="text-h5 my-8 text-md-h4 font-barlow">Contact Us</div>
 						<v-text-field
 							v-model="form.name"
 							solo
@@ -154,7 +154,7 @@
 						src="/images/contactus/contactUsBg_desktop.png"
 					></v-img>
 					<div data-aos="fade-right" data-aos-duration="1500">
-						<v-card-title :class="$vuetify.breakpoint.smAndDown ? 'ml-3 white--text font-family-libre-baskerville' : 'pl-16 py-8 text-h4 white--text font-family-libre-baskerville'">
+						<v-card-title :class="$vuetify.breakpoint.smAndDown ? 'ml-3 white--text font-barlow' : 'pl-16 py-8 text-h4 white--text font-barlow'">
 							Contact Details
 						</v-card-title>
 						<v-card-text :class="$vuetify.breakpoint.smAndDown ? 'pa-0 ' : 'pl-16'">
@@ -200,7 +200,7 @@
 						referrerpolicy="no-referrer-when-downgrade"
 					></iframe>
 					<div data-aos="fade-left" data-aos-duration="1500">
-						<v-card-title :class="$vuetify.breakpoint.smAndDown ? 'ml-3 white--text font-family-libre-baskerville' : 'pl-16 py-7 text-h4 font-family-libre-baskerville'">
+						<v-card-title :class="$vuetify.breakpoint.smAndDown ? 'ml-3 white--text font-barlow' : 'pl-16 py-7 text-h4 font-barlow'">
 							Address Details
 						</v-card-title>
 						<v-card-text :class="$vuetify.breakpoint.smAndDown ? 'pl-0' : 'pl-16 pb-10'">

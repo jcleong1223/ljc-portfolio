@@ -3,7 +3,7 @@
 		<section class="mt-16 pb-2 pt-10">
 			<v-container>
 				<v-row :class="$vuetify.breakpoint.smAndDown ? 'pl-8' :'justify-space-between'">
-					<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-family-libre-baskerville' : 'mb-2 font-size-title font-family-libre-baskerville font-weight-bold'">{{ capability.title }}</div>
+					<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-barlow' : 'mb-2 font-size-title font-barlow font-weight-bold'">{{ capability.title }}</div>
 					<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10" style="color: #DAA520;">
 						<router-link :to="{ name: 'capabilities' }" class="text-color-unset">
 							<span class="font-family-inter font-size-subtitle">
@@ -53,7 +53,7 @@
 		<section class="mb-10 pa-md-0 px-8">
 			<v-container>
 				<v-row class="justify-start">
-					<div class="my-md-5 mt-10 mb-5 font-size-subtitle font-weight-bold text-left font-family-libre-baskerville mx-0">{{ capability.title }}</div>
+					<div class="my-md-5 mt-10 mb-5 font-size-subtitle font-weight-bold text-left font-barlow mx-0">{{ capability.title }}</div>
 				</v-row>
 				<v-row class="justify-start">
 					<div class="text-justify font-size-text mx-0">
@@ -68,7 +68,7 @@
 		<section class="mb-15 pa-md-0 px-8">
 			<v-container>
 				<v-row class="justify-start">
-					<div class="my-8 font-weight-bold text-left font-family-libre-baskerville font-size-subtitle mx-0 px-0">Description</div>
+					<div class="my-8 font-weight-bold text-left font-barlow font-size-subtitle mx-0 px-0">Description</div>
 				</v-row>
 				<!-- <div>Picture section</div> -->
 				<v-row class="justify-start">

@@ -12,7 +12,7 @@
 							class="text-center"
 							absolute
 						>
-							<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto text-h4 font-family-libre-baskerville' : 'ma-auto pa-auto font-size-header font-family-libre-baskerville'"><b>Capabilities</b></span>
+							<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto text-h4 font-barlow' : 'ma-auto pa-auto font-size-header font-barlow'"><b>Capabilities</b></span>
 						</v-overlay>
 					</v-img>
 				</div>
@@ -28,7 +28,7 @@
 							data-aos="fade-right" data-aos-duration="2000"
 						>
 							<!-- replace text below with provided text-->
-							<span :class="$vuetify.breakpoint.smAndDown ? 'font-size-subtitle text-left font-family-libre-baskerville' : 'font-size-title font-family-libre-baskerville'"><b>Value Added Services</b></span>
+							<span :class="$vuetify.breakpoint.smAndDown ? 'font-size-subtitle text-left font-barlow' : 'font-size-title font-barlow'"><b>Value Added Services</b></span>
 							<ul class="text-justify font-size-text mt-5 ">
 								<li class="font-family-inter">To better satisfy the diverse needs of all kinds of industries, we supply various services to provide a one-stop solution to all your metal fabrication needs.</li>
 							</ul>
@@ -80,7 +80,7 @@
 									cover
 								></v-img>
 								<v-card-title
-									class="white--text font-family-libre-baskerville pl-7 font-size-subtitle"
+									class="white--text font-barlow pl-7 font-size-subtitle"
 								>
 									{{ capability.title }}
 								</v-card-title>

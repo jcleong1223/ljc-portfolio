@@ -9,6 +9,7 @@ import AOS from 'aos';
 
 // Layout
 const BaseLayout = () => import('@src/layouts/BaseLayout.vue')
+const SideBarBaseLayout = () => import('@src/layouts/SideBarBaseLayout.vue')
 
 const routes : Array<RouteConfig> = [
 
@@ -20,17 +21,22 @@ const routes : Array<RouteConfig> = [
 
 	// base_layout
 	{ path: '/', component: BaseLayout, children: [
-		{ path: '/', name: 'home-page', component: BaseModule.HomePage, meta: { auth: null, title: i18n.t("home-page.meta-title") } },
-		{ path: '/contact-me', name: 'contact-me', component: BaseModule.ContactUsPage, meta: { auth: null, title: i18n.t("contact-us-page.meta-title") } },
-		{ path: '/about-us', name: 'about-us', component: BaseModule.AboutUsPage, meta: { auth: null, title: i18n.t("about-us-page.meta-title") } },
-		// { path: '/projects', name: 'projects', component: BaseModule.ProjectsPage, meta: {auth: null, title: i18n.t("projects-page.meta-title")}},
-		{ path: '/capabilities', name: 'capabilities', component: BaseModule.CapabilitiesPage, meta: { auth: null, title: i18n.t("capabilities-page.meta-title") } },
-		{ path: '/capabilities/:id', name: 'capability.info', component: BaseModule.CapabilityDetailPage, meta: { auth: null, title: i18n.t("capability-detail-page.meta-title") } },
-		{ path: '/fabrications', name: 'fabrications', component: BaseModule.FabricationsPage, meta: { auth: null, title: i18n.t("fabrications-page.meta-title")}},
-		{ path: '/careers', name: 'careers', component: BaseModule.CareerPage, meta: { auth: null, title: i18n.t("career-page.meta-title")}},
-		{ path: '/career-detail/:id', name: 'career-detail', component: BaseModule.CareerDetailPage, meta: { auth: null, title: i18n.t("career-detail-page.meta-title")}},
-		{ path: '/term-and-condition', name: 'term-condition-page', component: _GeneralModule.TermsAndConditionsPage, meta: {auth: null, title: i18n.t("term-condition-page.meta-title")} },
-		{ path: '/privacy-policy', name: 'privacy-policy-page', component: _GeneralModule.PrivacyPolicy, meta: {auth: null, title: i18n.t("privacy-policy-page.meta-title")}},
+		{
+			path: '', component: SideBarBaseLayout, children: [
+				{ path: '/', name: 'home-page', component: BaseModule.HomePortfolioPage, meta: { auth: null, title: i18n.t("home-page.meta-title") } },
+				{ path: '/contact-me', name: 'contact-me', component: BaseModule.ContactMePage, meta: { auth: null, title: i18n.t("contact-us-page.meta-title") } },
+				{ path: '/about-us', name: 'about-us', component: BaseModule.AboutUsPage, meta: { auth: null, title: i18n.t("about-us-page.meta-title") } },
+				// { path: '/projects', name: 'projects', component: BaseModule.ProjectsPage, meta: {auth: null, title: i18n.t("projects-page.meta-title")}},
+				{ path: '/capabilities', name: 'capabilities', component: BaseModule.CapabilitiesPage, meta: { auth: null, title: i18n.t("capabilities-page.meta-title") } },
+				{ path: '/capabilities/:id', name: 'capability.info', component: BaseModule.CapabilityDetailPage, meta: { auth: null, title: i18n.t("capability-detail-page.meta-title") } },
+				{ path: '/fabrications', name: 'fabrications', component: BaseModule.FabricationsPage, meta: { auth: null, title: i18n.t("fabrications-page.meta-title")}},
+				{ path: '/careers', name: 'careers', component: BaseModule.CareerPage, meta: { auth: null, title: i18n.t("career-page.meta-title")}},
+				{ path: '/career-detail/:id', name: 'career-detail', component: BaseModule.CareerDetailPage, meta: { auth: null, title: i18n.t("career-detail-page.meta-title")}},
+				{ path: '/term-and-condition', name: 'term-condition-page', component: _GeneralModule.TermsAndConditionsPage, meta: {auth: null, title: i18n.t("term-condition-page.meta-title")} },
+				{ path: '/privacy-policy', name: 'privacy-policy-page', component: _GeneralModule.PrivacyPolicy, meta: {auth: null, title: i18n.t("privacy-policy-page.meta-title")}},
+			]
+		},
+
 	]},
 
 	{ path: '/coming-soon', name: 'coming-soon', component: _GeneralModule.ComingSoon, meta: { auth: null, title: 'Coming Soon' } },

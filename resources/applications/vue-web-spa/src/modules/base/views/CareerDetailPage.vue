@@ -3,7 +3,7 @@
 		<section :class="$vuetify.breakpoint.smAndDown ? 'mt-16 py-2' : 'mt-16 pt-13 pb-2'">
 			<v-container>
 				<v-row :class="$vuetify.breakpoint.smAndDown ? 'justify-center pt-8' : 'justify-space-between'">
-					<div :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold text-h4 font-family-libre-baskerville' : 'text-h5 mb-2 text-md-h4 font-family-libre-baskerville font-weight-bold'">Job Details</div>
+					<div :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold text-h4 font-barlow' : 'text-h5 mb-2 text-md-h4 font-barlow font-weight-bold'">Job Details</div>
 					<div
 						class="align-self-center text-decoration-underline back_effect"
 						:style="$vuetify.breakpoint.smAndDown ? 'display: none' : 'color: #DAA520;'"
@@ -29,7 +29,7 @@
 					<v-row :class="$vuetify.breakpoint.smAndDown ? 'd-block' : ''">
 						<v-col :class="$vuetify.breakpoint.smAndDown ? 'pa-0 pt-3' : ''">
 							<div :class="$vuetify.breakpoint.smAndDown ? 'justify-left mb-0' : 'text-center text-md-justify mx-auto mb-13'">
-								<div class="my-6 font-family-libre-baskerville"><h2>{{ career.career_detail.title }}</h2></div>
+								<div class="my-6 font-barlow"><h2>{{ career.career_detail.title }}</h2></div>
 								<div class="my-6"><h4 class="font-weight-regular"><v-icon color="#000000" class="mb-1 mr-3">mdi-map-marker</v-icon>{{ career.career_detail.location }}</h4></div>
 								<div class="my-6"><h4 class="font-weight-regular"><v-icon color="#000000" class="mb-1 mr-3">mdi-cash-usd</v-icon>{{ career.career_detail.salary_range }}</h4></div>
 							</div>
@@ -95,7 +95,7 @@
 				<v-sheet color="#000000" class="py-4 card_effect">
 					<v-container :class="$vuetify.breakpoint.smAndDown ? 'justify-start px-7' : 'justify-start'">
 						<div :class="$vuetify.breakpoint.smAndDown ? 'white--text mx-auto' : 'px-4 px-md-16 white--text'">
-							<div :class="$vuetify.breakpoint.smAndDown ? 'text-h5 mb-8 mt-3 font-family-libre-baskerville font-weight-bold' : 'text-h5 my-8 text-md-h4 font-family-libre-baskerville font-weight-bold'">Fill Up Your Details</div>
+							<div :class="$vuetify.breakpoint.smAndDown ? 'text-h5 mb-8 mt-3 font-barlow font-weight-bold' : 'text-h5 my-8 text-md-h4 font-barlow font-weight-bold'">Fill Up Your Details</div>
 							<div class="contactForm">
 								<form>
 									<!-- <input v-model="careerId" type="hidden" name="career_id"> -->

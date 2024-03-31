@@ -9,7 +9,7 @@
 						:aspect-ratio="$vuetify.breakpoint.mdAndUp ? 8/3 : 1"
 					>
 						<v-overlay absolute>
-							<span :class="$vuetify.breakpoint.mdAndUp ? 'ma-auto pa-auto text-center font-family-libre-baskerville font-size-header' : 'ma-auto pa-auto text-center text-xs-h6 text-h3 font-family-libre-baskerville'"><b>Careers</b></span>
+							<span :class="$vuetify.breakpoint.mdAndUp ? 'ma-auto pa-auto text-center font-barlow font-size-header' : 'ma-auto pa-auto text-center text-xs-h6 text-h3 font-barlow'"><b>Careers</b></span>
 						</v-overlay>
 					</v-img>
 				</div>
@@ -19,7 +19,7 @@
 
 		<section>
 			<v-container>
-				<div :class="$vuetify.breakpoint.smAndDown ? 'text-h5 font-family-libre-baskerville text-center my-10' : 'my-13 text-md-h5 font-weight-bold text-center font-family-libre-baskerville'"><h3>Join The Team</h3></div>
+				<div :class="$vuetify.breakpoint.smAndDown ? 'text-h5 font-barlow text-center my-10' : 'my-13 text-md-h5 font-weight-bold text-center font-barlow'"><h3>Join The Team</h3></div>
 				<v-img
 					src="/images/asset/career2.png" eager
 					:aspect-ratio="$vuetify.breakpoint.mdAndUp ? 8/3 : 1"
@@ -40,7 +40,7 @@
 					<v-row :class="$vuetify.breakpoint.smAndDown ? 'd-block' : 'mx-8'">
 						<v-col :class="$vuetify.breakpoint.smAndDown ? 'pt-1 pb-0' : ''">
 							<div :class="$vuetify.breakpoint.smAndDown ? 'text-left ml-8' : 'text-center text-md-justify mx-auto my-1'">
-								<div :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold my-6 font-family-libre-baskerville font-size-subtitle' : 'font-weight-bold my-6 font-family-libre-baskerville text-h5'">{{ career.careerTitle }}</div>
+								<div :class="$vuetify.breakpoint.smAndDown ? 'font-weight-bold my-6 font-barlow font-size-subtitle' : 'font-weight-bold my-6 font-barlow text-h5'">{{ career.careerTitle }}</div>
 								<div class="my-6 font-weight-bold"><h4><v-icon color="#000000" class="mb-1 mr-3">mdi-map-marker</v-icon>{{ career.careerLocation }}</h4></div>
 								<div class="font-weight-bold my-6"><h4><v-icon color="#000000" class="mb-1 mr-3">mdi-cash-usd</v-icon>{{ career.salary }}</h4></div>
 							</div>

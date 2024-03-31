@@ -13,9 +13,9 @@
 							<span class="font-family-inter text-h4" style="color:#014D69;"><b>Hello, I'm</b></span>
 							<br />
 							<br />
-							<span class="font-family-libre-baskerville text-h1" style="color:#014D69;font-weight:900;"><b>Jia Chong</b></span>
+							<span class="font-barlow text-h1" style="color:#014D69;font-weight:900;"><b>Jia Chong</b></span>
 							<div :class="$vuetify.breakpoint.smAndDown ? 'text-justify my-6' : 'text-justify my-md-5 my-2'">
-								<span class="text--black font-family-libre-baskerville text-h4" style="color:#014D69;">A Full Stack Developer</span>
+								<span class="text--black font-barlow text-h4" style="color:#014D69;">A Full Stack Developer</span>
 							</div>
 							<br />
 							<router-link
@@ -139,15 +139,12 @@
 									<span
 										class="text-decoration-underline text-h6"
 										style="cursor: pointer; color:#DAA520"
-
 									>Send
 									</span>
 								</div>
 							</v-row>
 						</v-card-text>
 					</v-card>
-
-
 					<v-card
 						eager
 						class="ml-10"
@@ -171,7 +168,7 @@
 		</section>
 		<section :class="$vuetify.breakpoint.smAndDown ? 'pt-16' : 'pt-15 pl-15'">
 			<v-row align="center" :class="$vuetify.breakpoint.smAndDown ? 'justify-space-between mb-2 mx-2 pl-3' : 'justify-space-between mb-15 mx-5 px-md-11 px-3'">
-				<span class="font-weight-bold text-left font-family-libre-baskerville font-size-title">Our Clients</span>
+				<span class="font-weight-bold text-left font-barlow font-size-title">Our Clients</span>
 				<div ref="clientsTargetDiv" class="d-flex justify-center"></div>
 			</v-row>
 			<vueper-slides
@@ -225,7 +222,7 @@
 				>
 					<template #content>
 						<div class="vueperslide__content-wrapper">
-							<div class="vueperslide__title font-size-subtitle py-3 font-weight-bold font-family-libre-baskerville" :style="'background-color: white; width: 100%; position: absolute; bottom:0;'">{{ client.name }}</div>
+							<div class="vueperslide__title font-size-subtitle py-3 font-weight-bold font-barlow" :style="'background-color: white; width: 100%; position: absolute; bottom:0;'">{{ client.name }}</div>
 						</div>
 					</template>
 				</vueper-slide>

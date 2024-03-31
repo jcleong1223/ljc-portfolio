@@ -1,14 +1,22 @@
 /* # Fonts
 * [reference] https://www.webfx.com/blog/web-design/google-font-api-guide/
 */
-@import url('https://fonts.googleapis.com/css?family=Nunito|Noto+Serif+SC|Inter|Barlow+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Noto+Serif+SC|Inter|IBM+Plex+Sans|Poppins|Barlow+Semi+Condensed');
 
 .font-family-primary{
 	font-family: "Nunito" !important;
 }
 
-.font-family-libre-baskerville{
+.font-barlow{
 	font-family: 'Barlow Semi Condensed' !important;
+}
+
+.font-poppins{
+	font-family: "Poppins", sans-serif !important;
+}
+
+.font-ibm-plex{
+	font-family: 'IBM Plex Sans' !important;
 }
 
 // font-family for specific lang

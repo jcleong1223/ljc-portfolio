@@ -1,4 +1,6 @@
-const HomePage = () => import('./views/HomePage.vue')
+// const HomePage = () => import('./views/HomePage.vue')
+const HomePortfolioPage = () => import('./views/HomePortfolioPage.vue')
+const ContactMePage = () => import('./views/ContactMePage.vue')
 const ContactUsPage = () => import('./views/ContactUsPage.vue')
 const AboutUsPage = () => import('./views/AboutUsPage.vue')
 const CapabilitiesPage = () => import('./views/CapabilitiesPage.vue')
@@ -8,7 +10,9 @@ const CareerDetailPage = () => import('./views/CareerDetailPage.vue')
 const CapabilityDetailPage = () => import('./views/CapabilityDetailPage.vue')
 
 export {
-	HomePage,
+	// HomePage,
+	HomePortfolioPage,
+	ContactMePage,
 	ContactUsPage,
 	AboutUsPage,
 	CapabilitiesPage,

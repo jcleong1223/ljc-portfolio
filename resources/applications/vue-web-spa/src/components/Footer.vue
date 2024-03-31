@@ -1,5 +1,5 @@
 <template>
-	<v-card color="transparent" class="mt-16 elevation-8">
+	<v-card color="transparent" class="elevation-8">
 		<v-footer padless>
 			<div class="pr-6 pb-4" style="bottom: 0; right: 0; z-index:1; position: fixed;">
 				<v-row class="ma-0 text-end flex-column" dense>

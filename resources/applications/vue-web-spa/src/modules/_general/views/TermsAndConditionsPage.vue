@@ -2,7 +2,7 @@
 	<v-sheet color="transparent" class="fill-height">
 		<section :class="$vuetify.breakpoint.smAndDown ? 'pt-16 mx-6' : ''">
 			<v-container :class="$vuetify.breakpoint.smAndDown ? 'py-10' : 'pt-16 mt-5 pb-10 text-justify'">
-				<div :class="$vuetify.breakpoint.smAndDown ? 'text-center text-h5 text-md-h4 font-weight-black font-family-libre-baskerville' : 'text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-family-libre-baskerville'">Terms & Conditions</div>
+				<div :class="$vuetify.breakpoint.smAndDown ? 'text-center text-h5 text-md-h4 font-weight-black font-barlow' : 'text-h5 text-md-h4 pb-6 pt-16 font-weight-black font-barlow'">Terms & Conditions</div>
 
 				<div class="my-10">
 					<span class="text-h6 font-weight-black">1.0 The Terms and Conditions</span>

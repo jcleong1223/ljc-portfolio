@@ -237,8 +237,14 @@ export default {
 	},
 	mounted(){
 		window.addEventListener('scroll', this.updateScroll);
+		this.setDarkTheme();
+
 	},
 	methods: {
+		setDarkTheme() {
+			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+			localStorage.setItem("dark-theme", this.$vuetify.theme.dark);
+		},
 		toggleDarkMode() {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
 			localStorage.setItem("dark-theme", this.$vuetify.theme.dark);

@@ -12,7 +12,7 @@
 							class="text-center"
 							absolute
 						>
-							<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto text-h4 font-family-libre-baskerville' : 'ma-auto pa-auto font-family-libre-baskerville font-size-header'"><b>Fabrications</b></span>
+							<span :class="$vuetify.breakpoint.smAndDown ? 'ma-auto pa-auto text-h4 font-barlow' : 'ma-auto pa-auto font-barlow font-size-header'"><b>Fabrications</b></span>
 						</v-overlay>
 					</v-img>
 				</div>
@@ -21,7 +21,7 @@
 
 		<section>
 			<v-container>
-				<div :class="$vuetify.breakpoint.smAndDown ? 'px-2 my-8 text-h6 font-weight-bold text-left font-family-libre-baskerville ' : 'my-16 text-md-h5 font-weight-bold text-left font-family-libre-baskerville title_responsive'"><h3>Major Projects</h3></div>
+				<div :class="$vuetify.breakpoint.smAndDown ? 'px-2 my-8 text-h6 font-weight-bold text-left font-barlow ' : 'my-16 text-md-h5 font-weight-bold text-left font-barlow title_responsive'"><h3>Major Projects</h3></div>
 				<v-sheet color="transparent">
 					<v-row class="mb-10 justify-sm-space-between justify-center">
 						<template v-for="(fabrication,i) in fabrications">
@@ -38,7 +38,7 @@
 										@click="viewFabricationImg(1, fabrication)"
 									>
 									</v-img>
-									<div class="mb-8"><span class="text-h6 font-weight-bold font-family-libre-baskerville">{{ fabrication.title }}</span></div>
+									<div class="mb-8"><span class="text-h6 font-weight-bold font-barlow">{{ fabrication.title }}</span></div>
 								</v-card>
 							</v-col>
 						</template>
@@ -67,7 +67,7 @@
 			activator="parent" :style="$vuetify.breakpoint.smAndDown ? 'width: 100%;' : 'width:70%;'"
 		>
 			<v-card color="black">
-				<v-card-text class="white--text pt-5 font-family-libre-baskerville">
+				<v-card-text class="white--text pt-5 font-barlow">
 					<v-row>
 						<v-col col="10" class="py-1 pl-6 align-self-center">
 							<h3>{{ fabricationTitle }}</h3>
