@@ -10,7 +10,7 @@
 					cols="12"
 					md="2"
 					lg="2"
-					style="background: rgb(22,24,32);background: linear-gradient(180deg, rgba(22,24,32,1) 0%, rgba(29,32,43,1) 100%);box-shadow: 4px 2px 20px 0px rgba(32,86,144,0.75); opacity: 0.9; padding-top: 50px ;"
+					style="background: rgb(22,24,32);background: linear-gradient(180deg, rgba(22,44,52,1) 0%, rgba(36,54,64,1) 100%);box-shadow: 4px 2px 20px 0px rgba(32,86,144,0.75); opacity: 0.9; padding-top: 50px ;"
 					class="fill-height"
 				>
 					<Sidebar></Sidebar>
@@ -51,11 +51,16 @@
 
 <script>
 import Sidebar from '@src/components/Sidebar.vue'
+import Footer from "@src/components/Footer.vue";
 export default {
-	components: { Sidebar },
+	components: { Sidebar,Footer },
 	data(){
 		return {
 		}
+	},
+	created(){
+		this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+		localStorage.setItem("dark-theme", this.$vuetify.theme.dark);
 	},
 	methods:{}
 }

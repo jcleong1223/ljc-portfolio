@@ -9,8 +9,8 @@
 			class="ml-md-10 mt-15"
 		>
 			<span
-				class="font-poppins text-h3 pl-md-0"
-				style="color: #66FCD1; text-shadow: 3px 1px 15px rgba(60,228,233,0.6); font-weight: 900;"
+				class="font-poppins text-h3 pl-md-0 customize-text-color"
+				style="text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
 			>
 				<b>The projects that I'm proud of</b>
 			</span>
@@ -328,5 +328,12 @@ export default {
 .customized_card:hover {
 	box-shadow: 0px 0px 50px 0px rgba(57,213,207,0.5) !important;
 }
+
+.customize-text-color {
+	background: -webkit-linear-gradient(rgb(102, 252, 209), rgb(102, 147, 252));
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
 
 </style>
