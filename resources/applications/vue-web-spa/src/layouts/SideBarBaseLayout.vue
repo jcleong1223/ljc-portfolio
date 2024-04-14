@@ -46,22 +46,25 @@
 			</transition>
 		</v-container> -->
 	</div>
-
 </template>
 
 <script>
 import Sidebar from '@src/components/Sidebar.vue'
-import Footer from "@src/components/Footer.vue";
+//import Footer from "@src/components/Footer.vue";
 export default {
-	components: { Sidebar,Footer },
+	components: {
+		Sidebar,
+		//Footer
+	},
 	data(){
 		return {
 		}
 	},
 	created(){
-		this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-		localStorage.setItem("dark-theme", this.$vuetify.theme.dark);
+
 	},
-	methods:{}
+	methods:{
+
+	}
 }
 </script>

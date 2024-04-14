@@ -229,6 +229,8 @@ export default {
 			// { title : "nav.contact-me", to : { name: "contact-me" } },
 		];
 
+		this.setDarkTheme();
+
 		// this.secondary_nav_links = [
 		// 	{ title : "nav.privacyPolicy", to: { name: "privacy-policy-page" }},
 		// 	{ title : "nav.term&Condition", to: { name: "term-condition-page" }},
@@ -237,7 +239,7 @@ export default {
 	},
 	mounted(){
 		window.addEventListener('scroll', this.updateScroll);
-		this.setDarkTheme();
+		
 
 	},
 	methods: {

@@ -9,38 +9,41 @@
 			class="ml-md-10 mt-15"
 		>
 			<span
-				class="font-poppins text-h3 pl-md-0"
-				style="color: #66FCD1; text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
+				class="font-poppins text-h3 pl-md-0 title-style"
 			>
 				<b>Contact with me now !!</b>
 			</span>
+			<input 
+				class="togglesw" 
+				type="checkbox"
+				@click="offLight"
+			>
 			<!-- </v-row> -->
-			
 			<v-container
 				class="justify-center px-0 mt-5"
 			>
 				<v-row
-					class="fill-width mx-auto"
+					class="fill-width mx-auto mt-10"
 					justify-md="start"
 					justify="center"
 				>
 					<v-col
-						md="12"
+						md="7"
 						cols="12"
 						style="background-color:transparent"
 					>
 						<v-sheet color="transparent">
-							<v-row class="mx-auto pa-0 justify-center">
+							<v-row class="pa-0 justify-center">
 								<v-card
 									eager
 									class=""
 									rounded="5"
-									style="height:550px; width:50%; border-radius: 50px;background: #EDF2F7;"
+									style="height:550px; width:100%; border-radius: 50px;background: rgb(22,44,52);background: linear-gradient(135deg, rgba(22,44,52,1) 0%, rgba(29,57,68,1) 100%);"
 								>
 									<v-card-text
-										class="black--text text-center text-justify pa-8 font-family-inter font-size-text d-flex align-center"
+										class="white--text text-center text-justify pa-8 font-family-inter font-size-text d-flex align-center"
 									>
-										<v-row class="pt-2 ma-0 black--text">
+										<v-row class="pt-2 ma-0 white--text">
 											<v-col class="pb-0" cols="6">
 												Your Name
 											</v-col>
@@ -49,92 +52,104 @@
 											</v-col>
 											<v-col class="py-1" cols="6">
 												<input
-
-													class="pa-2 input_special_inner_bow_shadow"
-													solo
+													type="text"
+													name="name"
+													class="input-style"
 													placeholder="Name"
-													dense
+													autocomplete="off"
 												>
 											</v-col>
 											<v-col class="py-1" cols="6">
 												<input
-
-													class="pa-2 input_special_inner_bow_shadow"
-													solo
+													type="text"
+													name="phone_number"
+													class="input-style"
 													placeholder="Phone Number"
-													dense
+													autocomplete="off"
 												>
 											</v-col>
 											<v-col class="pb-0" cols="12">Email</v-col>
 											<v-col class="py-1" cols="12">
 												<input
-
-													solo
-													class="pa-2 input_special_inner_bow_shadow"
-													placeholder="you@company.com"
-													dense
+													type="email"
+													name="email"
+													class="input-style"
+													placeholder="Email"
+													autocomplete="off"
 												>
 											</v-col>
 											<v-col class="pb-0" cols="12">Message</v-col>
 											<v-col class="pt-1" cols="12">
 												<textarea
-
-													solo
-													placeholder="Leave Jia Chong a message..."
-													dense
-													class="pl-2 input_special_inner_bow_shadow"
-													style="height: 120px;"
+													name="message"
+													class="input-style"
+													placeholder="Leave Leong a message"
 												></textarea>
 											</v-col>
-											<div class="font-weight-bold mt-5 submitNow_effect">
-												<span
-													class="text-decoration-underline text-h6"
-													style="cursor: pointer; color:#DAA520"
-												>Send
-												</span>
-											</div>
+											<button 
+												class="ml-4"
+											>
+												<span>Send</span>
+												<div class="top"></div>
+												<div class="left"></div>
+												<div class="bottom"></div>
+												<div class="right"></div>
+											</button>
 										</v-row>
 									</v-card-text>
-								</v-card>
-								<v-card
-									eager
-									class="ml-10"
-									rounded="5"
-									style="height:550px; width:30%; border-radius: 50px;"
-								>
-									<div class="custom-card">
-										<v-img src="/images/contactus/contactme.jpg" width="500px" class="text-center"></v-img>
-										<v-card-title
-											class="black--text text-center text-justify font-family-inter text-h6 d-flex align-center"
-										>
-											Full Stack Developer
-										</v-card-title>
-										<v-card-text
-											class="black--text text-center text-justify font-family-inter text-subtitle-1 d-flex align-center"
-										>
-											I am available for freelance work. Contact with me now !!<br>Email: leongjc1223@gmail.com<br>Phone: leongjc1223@gmail.com
-										</v-card-text>
-									</div>
 								</v-card>
 							</v-row>
 						</v-sheet>
 					</v-col>
+					<v-col
+						md="5"
+						cols="12"
+						style="background-color:transparent"
+					>
+					<div class="card-effect ml-n10" id="card">
+						<div class="content">
+							<div class="d-block">
+								<img src="/images/contactus/contactme.jpg" width="100%" class="text-center mb-10 rounded-xl"/>
+								<h2 class="font-poppins font-weight-medium ">Full Stack Developer </h2>
+								<span>
+									I am available for freelance work. Contact with me now !!<br>Email: leongjc1223@gmail.com<br>Phone: leongjc1223@gmail.com
+								</span>
+							</div>
+						</div>
+					</div>
+					</v-col>
 				</v-row>
 			</v-container>
 
-			<div class="card"></div>
-
-			<div class="card1">
-				<div class="card-info">
-					<p class="title">Magic Card</p>
+			<div class="container">
+				<div class="card">
+					<div class="face back">
+						<div class="content">
+							<span class="stars"></span>
+							<b class="desc">Hello</b>
+							<p class="desc">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							</p>
+						</div>
+					</div>
+					<div class="face front">
+						<b>Hover</b>
+					</div>
 				</div>
 			</div>
 
 
-			<div class="card2" id="card">
-			<div class="content">
-				<span>HOVER ME</span>
-			</div>
+			<div class="myCard">
+				<div class="innerCard">
+					<div class="frontSide">
+						<p class="title">FRONT SIDE</p>
+						<p>Hover Me</p>
+					</div>
+					<div class="backSide">
+						<p class="title">BACK SIDE</p>
+						<p>Leave Me</p>
+					</div>
+				</div>
 			</div>
 		</v-sheet>
 	</v-sheet>
@@ -165,195 +180,423 @@ export default {
 
 			this.submitContactInfo(item);
 		},
+
+		offLight(){
+			console.log('dd');
+			this.$el.querySelector(".title-style").style.animation = "none";
+		}
 	},
 };
 </script>
 
 <style>
 
-.card {
-  position: relative;
-  width: 190px;
-  height: 254px;
-  background: rgb(255, 0, 179);
-  background: linear-gradient(137deg, rgb(255, 0, 179) 0%, rgba(0,212,255,1) 100%);
-  transition: 0.3s ease;
-  border-radius: 30px;
-}
-
-.card::after {
-  content: '';
-  background-color: #181818;
-  position: absolute;
-  z-index: 1;
-  transition: 0.3s ease;
-  height: 98%;
-  width: 98%;
-  top: 1%;
-  left: 1%;
-  border-radius: 28px;
+/* Information card style and effect */
+.title-style {
+	color: #66FCD1;
+	text-shadow: 3px 1px 12px rgba(60,228,233,0.6);
+	font-weight: 900;
+	animation: flicker 5s infinite linear;
 }
 
 
-.card:hover {
-  filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 1));
+.card-effect {
+	width: 100%;
+	height: 100%;
+	background: #171717;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 3px 1px #00000088;
+	overflow: hidden;
+	position: relative;
+	border-radius: 25px;
 }
 
-
-
-
-
-.card1 {
- --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
- width: 190px;
- height: 254px;
- padding: 5px;
- border-radius: 1rem;
- overflow: visible;
- background: #f7ba2b;
- background: var(--background);
- position: relative;
- z-index: 1;
+.card-effect .content {
+	border-radius: 25px;
+	background: #171717;
+	width: 96%;
+	height: 96%;
+	z-index: 1;
+	padding: 20px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.card1::after {
- position: absolute;
- content: "";
- top: 30px;
- left: 0;
- right: 0;
- z-index: -1;
- height: 100%;
- width: 100%;
- transform: scale(0.8);
- filter: blur(25px);
- background: #f7ba2b;
- background: var(--background);
- transition: opacity .5s;
-}
-
-.card1-info {
- --color: #181818;
- background: var(--color);
- color: var(--color);
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100%;
- height: 100%;
- overflow: visible;
- border-radius: .7rem;
-}
-
-.card1 .title {
- font-weight: bold;
- letter-spacing: .1em;
-}
-
-/*Hover*/
-.card1:hover::after {
- opacity: 0;
-}
-
-.card1:hover .card-info {
- color: #f7ba2b;
- transition: color 1s;
-}
-
-
-
-
-
-
-
-
-
-.card2 {
-  width: 190px;
-  height: 254px;
-  background: #171717;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 0px 3px 1px #00000088;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-}
-
-.card2 .content {
-  border-radius: 5px;
-  background: #171717;
-  width: 186px;
-  height: 250px;
-  z-index: 1;
-  padding: 20px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card-effect:hover{
+	scale: 1.05;
+  	rotate: 3deg;
+	transition: 0.8s;
+	box-shadow: 0px 0px 45px -5px rgba(81,255,105,0.75);
 }
 
 .content::before {
-  opacity: 0;
-  transition: opacity 300ms;
-  content: " ";
-  display: block;
-  background: white;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  filter: blur(50px);
+	opacity: 0;
+	transition: opacity 500ms;
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	filter: blur(150px);
 }
 
-.card2:hover .content::before {
-  opacity: 1;
+.card-effect:hover .content::before {
+	opacity: 1;
+
 }
 
-.card2::before {
-  opacity: 0;
-  content: " ";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 360px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #ff2288,
-    #387ef0,
-    transparent
-  );
-  transition: opacity 300ms;
-  animation: rotation_9018 3000ms infinite linear;
-  animation-play-state: paused;
+.card-effect::before {
+	opacity: 0;
+	content: " ";
+	position: absolute;
+	display: block;
+	width: 115%;
+	height: 115%;
+	background: linear-gradient(
+		100deg,
+		#064cfc,
+		#00ff73,
+		#4cb5ff,
+		#5dff12
+	);
+	transition: opacity 500ms;
+	animation: rotation_9018 5000ms infinite linear;
+	animation-play-state: paused;
 }
 
-.card2:hover::before {
-  opacity: 1;
-  animation-play-state: running;
+.card-effect:hover::before {
+	opacity: 1;
+	animation-play-state: running;
+
 }
 
-.card2::after {
-  position: absolute;
-  content: " ";
-  display: block;
-  width: 190px;
-  height: 254px;
-  background: #17171733;
-  backdrop-filter: blur(50px);
+.card-effect::after {
+	position: absolute;
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 105%;
+	background: #01010100;
+	backdrop-filter: blur(50px);
 }
 
 @keyframes rotation_9018 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/* Information card style and effect */
+
+
+/* Input styling and effect */
+.input-style {
+	width: 100%;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid #303030;
+	border-bottom: 2px solid #9a9a9a;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #1e1e1e;
+	color: white;
+	transition: all 0.3s ease;
+}
+
+.input-style::placeholder {
+	color: #9a9a9a;
+}
+
+.input-style:hover {
+	background-color: #373737;
+}
+
+.input-style:active,
+.input-style:focus {
+	background-color: #19202d;
+	border: 1px solid #312f2f;
+	border-bottom: 2px solid #3abdfe;
+}
+/* Input styling and effect */
+
+
+/* Submit button effect */
+button {
+	padding: 0px 30px;
+	background-color: #121212;
+	border: none;
+	font-size: 13px;
+	position: relative;
+	border-radius: 10px;
+	transition: 500ms;
+}
+
+button span {
+	color: gray;
+	position: relative;
+	transition: 500ms;
+	transition-delay: 500ms;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+
+button:before {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 0%;
+	left: 50%;
+	right: 50%;
+	top: 50%;
+	bottom: 50%;
+	transition: 500ms;
+	transition-delay: 500ms;
+	background-color: transparent;
+	box-shadow: 0 0 10px rgb(53, 244, 174),
+	0 0 30px rgb(53, 244, 174), 
+	0 0 50px rgb(53, 244, 174);
+}
+
+button div {
+	border-radius: 15px;
+  	transition: 500ms;
+  	position: absolute;
+  	background-color: rgb(53, 244, 174);
+  	box-shadow: 0 0 15px rgb(53, 244, 174), 0 0 30px rgb(53, 244, 174), 0 0 50px rgb(53, 244, 174);
+}
+
+button .top {
+	width: 15px;
+	height: 2px;
+	top: 0;
+	left: 0;
+}
+
+button .bottom {
+	width: 15px;
+	height: 2px;
+	bottom: 0;
+	right: 0;
+}
+
+button .left {
+	width: 2px;
+	height: 15px;
+	top: 0;
+	left: 0;
+}
+
+button .right {
+	width: 2px;
+	height: 15px;
+	bottom: 0;
+	right: 0;
+}
+
+
+button:hover .top, 
+button:hover .bottom {
+	width: 100%;
+}
+
+button:hover .left,
+button:hover .right {
+	height: 100%;
+}
+/* Submit button effect */
+
+
+
+
+.container {
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 15px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+}
+
+.face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face.back {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.face.back b {
+  margin: 0;
+  padding: 0;
+}
+
+.face.back .desc {
+  background-color: #eee;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.face.front {
+  transition: 0.5s;
+}
+
+.face.front b {
+  margin: 0;
+  padding: 0;
+  font-size: 5.1em;
+  color: #fff;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.card:hover .face.front {
+  height: 60px;
+}
+
+.card:hover .face.front b {
+  font-size: 2em;
+}
+
+.face.front {
+  background-color: #0cbaba;
+  border-radius: 15px;
+}
+
+
+
+
+
+.myCard {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.innerCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.myCard:hover .innerCard {
+  transform: rotateY(180deg);
+}
+
+.frontSide,
+.backSide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.frontSide,
+.frontSide::before {
+  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+}
+
+.backSide,
+.backSide::before {
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.backSide {
+  transform: rotateY(180deg);
+}
+
+.frontSide::before,
+.backSide::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: '';
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 1em;
+  filter: blur(20px);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
   0% {
-    transform: rotate(0deg);
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 1;
   }
 
   100% {
-    transform: rotate(360deg);
+    opacity: 0.3;
   }
 }
 
+
+@keyframes flicker {
+	0%,18%,20%,40%,50.1%,60%,65.1%,80%,90.1%,92%{
+		color: #B8CCED;
+		text-shadow: none;
+	}
+	18.1%,20.1%,30%,40.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+		color: #ffffff;
+		text-shadow: 0 0 10px #78C7C8,
+		 0 0 10px #78C7C8,
+		  0 0 30px #78C7C8,
+		   0 0 70px #78C7C8,
+		   0 0 100px #78C7C8
+	}
+}
 
 
 </style>

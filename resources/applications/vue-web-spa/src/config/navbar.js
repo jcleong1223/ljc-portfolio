@@ -12,13 +12,13 @@ function navbarList(){
 				{
 					permissions : null,
 					title : "ABOUT",
-					to: '/contact-me',
+					to: '/about-leong',
 					sub: null,
 				},
 				{
 					permissions : null,
 					title : "CONTACT",
-					to: '/contact-me',
+					to: '/contact-leong',
 					sub: null
 				},
 			]

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito|Noto+Serif+SC|Inter|Barlow+Semi+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Nunito|Noto+Serif+SC|Inter|IBM+Plex+Sans|Poppins|Barlow+Semi+Condensed);
 @charset "UTF-8";
 .radius-05 {
   border-radius: 5px !important;
@@ -244,8 +244,16 @@ html, body, .v-application {
   font-family: "Nunito" !important;
 }
 
-.font-family-libre-baskerville {
+.font-barlow {
   font-family: "Barlow Semi Condensed" !important;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.font-ibm-plex {
+  font-family: "IBM Plex Sans" !important;
 }
 
 html:lang(zh-CN) .font-family-primary {
