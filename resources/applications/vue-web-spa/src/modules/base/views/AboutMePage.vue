@@ -9,7 +9,7 @@
 			class="ml-md-10 mt-15"
 		>
 			<v-container
-				class="justify-center px-0 mt-5"
+				class="justify-center px-0 mt-5 mb-15"
 			>
 				<v-row
 					class="fill-width mx-auto"
@@ -19,9 +19,9 @@
 					<v-col
 						md="5"
 						cols="12"
-						style="background-color:transparent"
+						style="background-color:transparent;text-align: -webkit-center;"
 					>
-					<div class="card-effect" id="card">
+					<div class="polaroid-card" id="card">
 						<div class="content">
 							<div class="d-block">
 								<img src="/images/profileimg_placeholder.png" width="100%" class="text-center mb-10 rounded-md"/>
@@ -35,41 +35,309 @@
 						cols="12"
 						style="background-color:transparent"
 					>
-						
+					<div
+						class="d-block"
+					>
+						<span
+							class="font-poppins text-h3 pl-md-0 title-style"
+						>
+							<b>Hello, I'm Kevin Leong </b>
+						</span>
+						<span style="font-size: 30px;">&#128512;</span>
+						<br/>
+						<div
+							class="mt-10 mr-10"
+						>
+							<span>If you have a peanut allergy, it's crucial to get tested by an allergist to determine if you have allergies to other nuts like almonds and walnuts. Skin prick tests or blood tests can help diagnose tree nut allergies</span>
+						</div>
+						<div
+							class="mt-10 mr-10"
+							style="font-size: 60px;"
+						>
+							<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
+							<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
+						</div>
+					</div>
+
 					</v-col>
 				</v-row>
 			</v-container>
 
-			<div class="container">
-				<div class="card">
-					<div class="face back">
-						<div class="content">
-							<span class="stars"></span>
-							<b class="desc">Hello</b>
-							<p class="desc">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							</p>
+
+
+
+			<v-container
+				class="justify-center px-0 pl-7"
+			>
+				<div
+					class="mb-10"
+				>
+					<span
+							class="font-poppins text-h3 pl-md-0 ml-6"
+						>
+							<b>My Skills </b>
+					</span>
+				</div>
+				<v-row
+					class="fill-width mx-auto mb-8"
+					justify-md="start"
+					justify="center"
+				>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/html.png" width="50%" class="text-center"/>
+									<p>HTML</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="face front">
-						<b>Hover</b>
-					</div>
-				</div>
-			</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/css.png" width="50%" class="text-center"/>
+									<p>CSS</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/javascript.png" width="50%" class="text-center"/>
+									<p>Javascript</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/css.png" width="50%" class="text-center"/>
+									<p>CSS</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/html.png" width="50%" class="text-center"/>
+									<p>HTML</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+				</v-row>
+				<v-row
+					class="fill-width mx-auto"
+					justify-md="start"
+					justify="center"
+				>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/html.png" width="50%" class="text-center"/>
+									<p>HTML</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/css.png" width="50%" class="text-center"/>
+									<p>CSS</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/javascript.png" width="50%" class="text-center"/>
+									<p>Javascript</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/css.png" width="50%" class="text-center"/>
+									<p>CSS</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+					<v-col
+						md="2"
+						cols="12"
+						style="background-color:transparent;text-align: -webkit-center;"
+					>
+						<div class="card-container">
+							<div class="card">
+								<div class="front-content d-block align-self-center pt-6">
+									<img src="/images/html.png" width="50%" class="text-center"/>
+									<p>HTML</p>
+								</div>
+								<div class="content">
+									<p class="heading">
+										<!-- For another hovering effect -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</v-col>
+				</v-row>
+			</v-container>
 
 
-			<div class="myCard">
-				<div class="innerCard">
-					<div class="frontSide">
-						<p class="title">FRONT SIDE</p>
-						<p>Hover Me</p>
-					</div>
-					<div class="backSide">
-						<p class="title">BACK SIDE</p>
-						<p>Leave Me</p>
-					</div>
+			<v-container>
+				<v-row
+					class="fill-width mx-auto mb-10"
+					justify-md="start"
+					justify="center"
+				>
+					<v-col
+						md="5"
+						cols="12"
+						style="background-color:transparent;"
+					>
+						<div class="list">
+							<ul>
+								<li><span><span class="mdi mdi-language-css3 py-0"></span>Webpage Frontend Development</span></li>
+								<li><span><span class="mdi mdi-apps-box py-0"></span>Software Product Development</span></li>
+								<li><span><span class="mdi mdi-application-import py-0"></span>Webpage Backend Development</span></li>
+								<li><span><span class="mdi mdi-cog-box py-0"></span>CRM System Development</span></li>
+							</ul>
+						</div>
+					</v-col>
+					<v-col
+						md="5"
+						cols="12"
+						style="background-color:transparent;"
+					>
+						<div class="list">
+							<ul>
+								<li><span><span class="mdi mdi-api py-0"></span>API Development</span></li>
+								<li><span><span class="mdi mdi-application-cog py-0"></span>CMS Development</span></li>
+								<li><span><span class="mdi mdi-page-next py-0"></span>Landing Page</span></li>
+								<li><span><span class="mdi mdi-wordpress py-0"></span>Wordpress Development</span></li>
+							</ul>
+						</div>
+					</v-col>
+				</v-row>
+			</v-container>
+
+			<v-container>
+				<div
+					class=""
+				>
+					<span
+							class="font-poppins text-h3 pl-md-0 ml-6"
+						>
+							<b>Certificates </b>
+					</span>
 				</div>
-			</div>
+				<v-row
+					class="fill-width mx-auto"
+					justify-md="start"
+					justify="center"
+				>
+					
+				</v-row>
+			</v-container>
 		</v-sheet>
 	</v-sheet>
 </template>
@@ -106,199 +374,6 @@ export default {
 	animation: flicker 5s infinite linear;
 }
 
-
-.card-effect {
-	width: 75%;
-	height: 100%;
-	background: #ffffff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-shadow: 0px 0px 3px 1px #00000088;
-	overflow: hidden;
-	position: relative;
-	border-radius: 8px;
-	rotate: -3deg;
-}
-
-.card-effect .content {
-	border-radius: 15px;
-	background: #ffffff;
-	width: 96%;
-	height: 96%;
-	z-index: 1;
-	padding: 20px 15px;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-/* Information card style and effect */
-
-
-
-.container {
-  margin: 0 auto;
-}
-
-.card {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  margin: 0 auto;
-  background: #000;
-  border-radius: 15px;
-  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
-}
-
-.face {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.face.back {
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-.face.back b {
-  margin: 0;
-  padding: 0;
-}
-
-.face.back .desc {
-  background-color: #eee;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.face.front {
-  transition: 0.5s;
-}
-
-.face.front b {
-  margin: 0;
-  padding: 0;
-  font-size: 5.1em;
-  color: #fff;
-  transition: 0.5s;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-
-.card:hover .face.front {
-  height: 60px;
-}
-
-.card:hover .face.front b {
-  font-size: 2em;
-}
-
-.face.front {
-  background-color: #0cbaba;
-  border-radius: 15px;
-}
-
-
-
-
-
-.myCard {
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  perspective: 1000px;
-}
-
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-}
-
-.innerCard {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-}
-
-.myCard:hover .innerCard {
-  transform: rotateY(180deg);
-}
-
-.frontSide,
-.backSide {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 1rem;
-  color: white;
-  box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
-  font-weight: 700;
-}
-
-.frontSide,
-.frontSide::before {
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
-}
-
-.backSide,
-.backSide::before {
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-}
-
-.backSide {
-  transform: rotateY(180deg);
-}
-
-.frontSide::before,
-.backSide::before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: '';
-  width: 110%;
-  height: 110%;
-  position: absolute;
-  z-index: -1;
-  border-radius: 1em;
-  filter: blur(20px);
-  animation: animate 5s linear infinite;
-}
-
-@keyframes animate {
-  0% {
-    opacity: 0.3;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.3;
-  }
-}
-
-
 @keyframes flicker {
 	0%,18%,20%,40%,50.1%,60%,65.1%,80%,90.1%,92%{
 		color: #B8CCED;
@@ -313,6 +388,171 @@ export default {
 		   0 0 100px #78C7C8
 	}
 }
+
+.polaroid-card {
+
+	width: 70%;
+	height: 96%;
+	background: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 15px 10px #4949498b;
+	overflow: hidden;
+	position: relative;
+	border-radius: 8px;
+	rotate: -3deg;
+}
+
+.polaroid-card .content {
+	border-radius: 15px;
+	background: #ffffff;
+	width: 96%;
+	z-index: 1;
+	padding: 20px 15px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* Information card style and effect */
+
+
+
+
+
+
+.card-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* border: #f89b29 solid 1px; */
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .front-content p {
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateY(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card-container:hover {
+	box-shadow: 0 0 20px rgba(255, 212, 58, 0.8);
+  border-color: #f3bf25;
+}
+
+
+
+
+
+
+
+
+
+
+
+.list {
+  position: relative;
+
+}
+.list ul {
+  position: relative;
+}
+.list ul li {
+  position: relative;
+  left: 0;
+  color: #fce4ec;
+  list-style: none;
+  margin: 20px 0;
+  padding: 8px 0;
+  border-left: 2px solid #1cd18b;
+  transition: 0.5s;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+}
+.list ul li:hover {
+  left: 10px;
+}
+.list ul li span {
+	font-size: 18px;
+  position: relative;
+  padding: 8px;
+  padding-left: 10px;
+  display: inline-block;
+  z-index: 1;
+  transition: 0.5s;
+}
+.list ul li:hover span {
+  color: #111;
+}
+.list ul li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #1cd18b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s;
+}
+.list ul li:hover:before {
+  transform: scaleX(1);
+}
+
+
+
+
 
 
 </style>
