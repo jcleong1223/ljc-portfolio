@@ -310,7 +310,7 @@ export default {
 .input-style:focus {
 	background-color: #19202d;
 	border: 1px solid #312f2f;
-	border-bottom: 2px solid #3abdfe;
+	border-bottom: 2px solid #35F4AE;
 }
 /* Input styling and effect */
 

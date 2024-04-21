@@ -297,8 +297,8 @@
 						<div class="list">
 							<ul>
 								<li><span><span class="mdi mdi-language-css3 py-0"></span>Webpage Frontend Development</span></li>
-								<li><span><span class="mdi mdi-apps-box py-0"></span>Software Product Development</span></li>
 								<li><span><span class="mdi mdi-application-import py-0"></span>Webpage Backend Development</span></li>
+								<li><span><span class="mdi mdi-apps-box py-0"></span>Software Product Development</span></li>
 								<li><span><span class="mdi mdi-cog-box py-0"></span>CRM System Development</span></li>
 							</ul>
 						</div>
@@ -322,34 +322,132 @@
 
 			<v-container>
 				<div
-					class=""
+					class="mb-10"
 				>
 					<span
 							class="font-poppins text-h3 pl-md-0 ml-6"
 						>
 							<b>Certificates </b>
 					</span>
+					<!-- <div ref="certificatesTargetDiv" class="d-flex justify-center"></div> -->
 				</div>
-				<v-row
-					class="fill-width mx-auto"
-					justify-md="start"
-					justify="center"
+				<vueper-slides
+					ref="certificateSlides"
+					:class="$vuetify.breakpoint.mdAndUp ? 'no-shadow mx-md-16 mx-8' : 'no-shadow'"
+					:visible-slides="$vuetify.breakpoint.mdAndUp ? 3 : 1"
+					:size="$vuetify.breakpoint.mdAndUp ? 200 : 500"
+					slide-multiple
+					:bullet-outside="true"
+					:gap="3"
+					:slide-ratio="1 / 4"
+					:touchable="false"
 				>
-					
-				</v-row>
+					<template #arrow-left>
+						<v-btn
+							id="prev-button"
+							color="black"
+							height="40"
+							min-width="40"
+							class="pa-0"
+							elevation="0"
+							tile
+							style="border-radius: 50%"
+						>
+							<v-icon
+								color="white" class="prev-button"
+								:style="$vuetify.breakpoint.smAndDown ? 'font-size: 35px;' : 'font-size: 40px;'"
+							>
+								mdi-chevron-left
+							</v-icon>
+						</v-btn>
+					</template>
+					<template #arrow-right>
+						<v-btn
+							id="next-button"
+							color="black"
+							height="40"
+							min-width="40"
+							class="pa-0"
+							elevation="0"
+							tile
+							style="border-radius: 50%"
+						>
+							<v-icon
+								color="white" class="next-button"
+								:style="$vuetify.breakpoint.smAndDown ? 'font-size: 35px;' : 'font-size: 40px;'"
+							>
+								mdi-chevron-right
+							</v-icon>
+						</v-btn>
+					</template>
+					<vueper-slide
+						v-for="(certificate,i) in certificates" 
+						:key="i" 
+						:image="certificate.web_image.file_url"
+						style="border-radius: 25px; box-shadow: 0 15px 20px rgba(0, 0, 0, 0.7); cursor: pointer;"
+					>
+						<template #content>
+							<div class="vueperslide__content-wrapper" @click="previewCert(certificate, i)">
+								<div 
+									class="vueperslide__title py-2 font-weight-bold font-size-subtitle" 
+									:style="'background-color: rgba(22,44,52,1); color:white; width: 100%; position: absolute; bottom:0;'"
+								>
+									{{ certificate.title }}
+								</div>
+							</div>
+						</template>
+					</vueper-slide>
+
+					<template #bullet="{ active }">
+						<i class="icon px-1"><v-icon :color="active ? '#2F5E6F' : '#D9D9D9'" :size="$vuetify.breakpoint.smAndDown ? '35px' : '45px'" class="px-md-0 px-1">mdi-minus</v-icon></i>
+					</template>
+				</vueper-slides>
 			</v-container>
 		</v-sheet>
+
+		<v-container>
+			<div class="text-center">
+				<v-dialog
+					v-if="certModal"
+					v-model="certModal"
+					activator="parent"
+					:width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'"
+				>
+					<v-card color="black">
+						<v-card-text class="white--text pt-5 font-family-libre-baskerville">
+							<v-row>
+								<v-col col="10" class="py-1 pl-6 align-self-center">
+									<h3>{{ current_cert.title }}</h3>
+								</v-col>
+								<v-col col="2" class="text-end py-1">
+									<div :class="$vuetify.breakpoint.mdAndUp?'':'py-1'"><v-icon :size="$vuetify.breakpoint.mdAndUp?'33px':'35px'" color="white" @click="certModal = false">mdi-close-circle</v-icon></div>
+								</v-col>
+							</v-row>
+						</v-card-text>
+						<v-img :src="current_cert.web_image.file_url" width="100%"></v-img>
+					</v-card>
+				</v-dialog>
+			</div>
+		</v-container>
 	</v-sheet>
 </template>
 
 <script>
+import { VueperSlides, VueperSlide} from 'vueperslides';
+import 'vueperslides/dist/vueperslides.css';
+import BaseClient from '../client';
 
 export default {
-	components: {},
+	components: {
+		VueperSlide,
+		VueperSlides,
+	},
 
 	data() {
 		return {
-
+			certificates: [],
+			certModal: false,
+			current_cert: '',
 			// currencyFormat: '',
 		};
 	},
@@ -358,10 +456,46 @@ export default {
 	},
 	created() {
 		//
+		this.fetchCertData();
+	},
+	beforeUpdate() {
+		this.$nextTick(() => {
+
+			const certificatesSlides = this.$refs.certificateSlides.$el;
+			const certificatesPrevButton = certificatesSlides.querySelector('.vueperslides__arrow--prev');
+			const certificatesNextButton = certificatesSlides.querySelector('.vueperslides__arrow--next');
+			const certificatesTargetDiv = this.$refs.certificatesTargetDiv;
+			const certificatesBulletLength = this.$refs.certificateSlides.bulletIndexes.length;
+
+			if(certificatesPrevButton && certificatesNextButton && certificatesBulletLength > 1){
+				certificatesTargetDiv.appendChild(certificatesPrevButton);
+				certificatesTargetDiv.appendChild(certificatesNextButton);
+			} else {
+				if(certificatesBulletLength < 2) {
+					while (certificatesTargetDiv.firstChild) {
+						certificatesTargetDiv.removeChild(certificatesTargetDiv.firstChild);
+					}
+				}
+				this.$refs.certificateSlides.goToSlide(this.$refs.certificateSlides.$data.slides.current)
+			}
+		})
 	},
 	methods: {
+		fetchCertData(){
+			BaseClient.getCertificatesPage().then((res) => {
+				const result = res.data.data
+				this.certificates = result.certificates;
+				console.log(this.certificates);
+			}).catch((err) => {
+				this.errorHandler_(err);
+			});
+		},
+		previewCert(cert, idx){
+			this.certModal = true;
+			this.current_cert = cert;
+		}
 	},
-};
+};1
 </script>
 
 <style>
