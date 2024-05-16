@@ -9,7 +9,7 @@ export default new Vuetify({
 		dark : true,
 		themes: {
 			light: {
-				'primary': '#D44848',
+				'primary': '#527853',
 				'secondary': '#FFFFFF',
 				// 'tertiary' : '#3EA6FF',
 				'background': '#F0F1F2',
@@ -17,7 +17,7 @@ export default new Vuetify({
 				'opposite': '#202020',
 			},
 			dark: {
-				'primary': '#D44848',
+				'primary': '#527853',
 				'secondary': '#27282E',
 				// 'tertiary' : '#3EA6FF',
 				'background': '#232429',

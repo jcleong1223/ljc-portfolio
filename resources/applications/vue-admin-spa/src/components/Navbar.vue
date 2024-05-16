@@ -5,7 +5,7 @@
 			app
 			height="60"
 			flat
-			color="secondary"
+			color="#B99470"
 			class="elevation-1"
 		>
 			<template v-if="!isOpen">

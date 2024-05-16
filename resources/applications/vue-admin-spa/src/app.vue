@@ -1,6 +1,6 @@
 <template>
-	<v-app>
-		<v-main v-if="auth_ready" class="background">
+	<v-app class="font-family-primary">
+		<v-main v-if="auth_ready" style="background-color: #EADBC8;">
 			<transition name="fade">
 				<router-view></router-view>
 			</transition>
