@@ -1,6 +1,6 @@
 export default {
 
-	name: "KPLoo",
+	name: "LJC",
 
 	version: "v1.0.0", // build bundle
 

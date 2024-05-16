@@ -31,12 +31,12 @@ function navbarList(){
 		{
 			title : "System Entities",
 			routes : [
-				{
-					permissions : null,
-					icon: "mdi-image-frame", title : "Banners",
-					to: '/banners/list',
-					sub: null
-				},
+				// {
+				// 	permissions : null,
+				// 	icon: "mdi-image-frame", title : "Banners",
+				// 	to: '/banners/list',
+				// 	sub: null
+				// },
 				// {
 				// 	permissions : null,
 				// 	icon: "mdi-google-photos", title : "Gallery",
@@ -51,28 +51,40 @@ function navbarList(){
 				},
 				{
 					permissions : null,
-					icon: "mdi-face", title : "Career",
-					to: '/careers/list',
+					icon: "mdi-book", title : "Project",
+					to: '/projects/list',
 					sub: null
 				},
+				{
+					permissions : null,
+					icon: "mdi-tag", title : "Tags",
+					to: '/tags/list',
+					sub: null
+				},
+				// {
+				// 	permissions : null,
+				// 	icon: "mdi-face", title : "Career",
+				// 	to: '/careers/list',
+				// 	sub: null
+				// },
 				{
 					permissions : null,
 					icon: "mdi-wrench", title : "Capability",
 					to: '/capabilities/list',
 					sub: null
 				},
-				{
-					permissions : null,
-					icon: "mdi-file", title : "Fabrication",
-					to: '/fabrications/list',
-					sub: null
-				},
-				{
-					permissions : null,
-					icon: "mdi-account-multiple", title : "Our Clients",
-					to: '/clients/list',
-					sub: null
-				},
+				// {
+				// 	permissions : null,
+				// 	icon: "mdi-file", title : "Fabrication",
+				// 	to: '/fabrications/list',
+				// 	sub: null
+				// },
+				// {
+				// 	permissions : null,
+				// 	icon: "mdi-account-multiple", title : "Our Clients",
+				// 	to: '/clients/list',
+				// 	sub: null
+				// },
 
 				// {
 				// 	permissions : null,

@@ -1,7 +1,7 @@
 import axios from 'axios';
-const prefix = "/certificate"
+const prefix = "/project"
 
-const certificateClient = {
+const projectClient = {
 
 	getList(payload) {
 		return axios.get( prefix + "/list", {params: payload})
@@ -22,4 +22,4 @@ const certificateClient = {
 }
 
 
-export default certificateClient
+export default projectClient

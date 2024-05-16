@@ -198,7 +198,7 @@ export default{
 		},
 		saveModel(item) {
 			this.submit_loading = true
-			
+
 			let payload = new FormData()
 			payload.append("id", item.id)
 			payload.append("title", item.title ?? '');
@@ -216,7 +216,7 @@ export default{
 					payload.append(`media_contents[${key}]`, item instanceof File ? item : item.id)
 				})
 			}
-			
+
 			let theApi = (this.action == "new") ? ServiceClient.createService(payload) : ServiceClient.updateService(payload)
 			theApi.then((res) => {
 				this.$toast.success(res.data.message)

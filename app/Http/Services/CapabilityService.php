@@ -3,19 +3,20 @@
 namespace App\Http\Services;
 
 use App\Models\ModelableFile;
+use App\Models\PortfolioProject;
 use App\Models\Service;
 use Illuminate\Http\UploadedFile;
 
 class CapabilityService
 {
-	public static function syncGalleries(Service $service, array $galleriesPayload)
+	public static function syncGalleries(PortfolioProject $project, array $galleriesPayload)
 	{
 		$collection = collect();
-		collect($galleriesPayload)->each(function ($item, $key) use ($service, $collection)
+		collect($galleriesPayload)->each(function ($item, $key) use ($project, $collection)
 		{
 			if ($item instanceof UploadedFile)
 			{
-				$mediaContent = $service->mediaContents()->create([
+				$mediaContent = $project->mediaContents()->create([
 					'seq_value' => $key+1,
 				]);
 
@@ -24,7 +25,7 @@ class CapabilityService
 			}
 			else
 			{
-				$mediaContent = $service->mediaContents()->where('id', $item)->first();
+				$mediaContent = $project->mediaContents()->where('id', $item)->first();
 				if ($mediaContent)
 				{
 					$mediaContent->update([
@@ -36,7 +37,7 @@ class CapabilityService
 		});
 
 		$toKeepIds= $collection->pluck('id');
-		$service->mediaContents()->whereNotIn('id', $toKeepIds)->delete();
+		$project->mediaContents()->whereNotIn('id', $toKeepIds)->delete();
 
 		return $collection;
 	}

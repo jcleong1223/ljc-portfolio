@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\{
 	ServiceController,
 	UserController,
 };
+use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('api')->middleware([])->group(function ()
@@ -90,24 +91,6 @@ Route::prefix('api')->middleware(['auth:sanctum'])->group(function ()
 		Route::post('/verification/toggle', [UserController::class, 'toggleVerificationStatus']);
 	});
 
-	Route::prefix('product')->group(function ()
-	{
-		Route::get('/list', [ProductController::class, 'list']);
-		Route::get('/info/{id}', [ProductController::class, 'info']);
-		Route::post('/create', [ProductController::class, 'create']);
-		Route::post('/update', [ProductController::class, 'update']);
-		Route::delete('/archive', [ProductController::class, 'delete']);
-	});
-
-	Route::prefix('career')->group(function ()
-	{
-		Route::get('/list', [CareerController::class, 'list']);
-		Route::get('/info/{id}', [CareerController::class, 'info']);
-		Route::post('/create', [CareerController::class, 'create']);
-		Route::post('/update', [CareerController::class, 'update']);
-		Route::delete('/archive', [CareerController::class, 'delete']);
-	});
-
 	Route::prefix('certificate')->group(function ()
 	{
 		Route::get('/list', [CertificateController::class, 'list']);
@@ -116,21 +99,48 @@ Route::prefix('api')->middleware(['auth:sanctum'])->group(function ()
 		Route::delete('/archive', [CertificateController::class, 'delete']);
 	});
 
-	Route::prefix('client')->group(function ()
+	Route::prefix('project')->group(function ()
 	{
-		Route::get('/list', [ClientController::class, 'list']);
-		Route::post('/create', [ClientController::class, 'create']);
-		Route::post('/update', [ClientController::class, 'update']);
-		Route::delete('/archive', [ClientController::class, 'delete']);
+		Route::get('/list', [ProjectController::class, 'list']);
+		Route::post('/create', [ProjectController::class, 'create']);
+		Route::post('/update', [ProjectController::class, 'update']);
+		Route::delete('/archive', [ProjectController::class, 'delete']);
+		Route::get('/tags-list', [ProjectController::class, 'getTagList']);
 	});
 
-	Route::prefix('fabrication')->group(function ()
-	{
-		Route::get('/list', [FabricationController::class, 'list']);
-		Route::post('/create', [FabricationController::class, 'create']);
-		Route::post('/update', [FabricationController::class, 'update']);
-		Route::delete('/archive', [FabricationController::class, 'delete']);
-	});
+	// Route::prefix('product')->group(function ()
+	// {
+	// 	Route::get('/list', [ProductController::class, 'list']);
+	// 	Route::get('/info/{id}', [ProductController::class, 'info']);
+	// 	Route::post('/create', [ProductController::class, 'create']);
+	// 	Route::post('/update', [ProductController::class, 'update']);
+	// 	Route::delete('/archive', [ProductController::class, 'delete']);
+	// });
+
+	// Route::prefix('career')->group(function ()
+	// {
+	// 	Route::get('/list', [CareerController::class, 'list']);
+	// 	Route::get('/info/{id}', [CareerController::class, 'info']);
+	// 	Route::post('/create', [CareerController::class, 'create']);
+	// 	Route::post('/update', [CareerController::class, 'update']);
+	// 	Route::delete('/archive', [CareerController::class, 'delete']);
+	// });
+
+	// Route::prefix('client')->group(function ()
+	// {
+	// 	Route::get('/list', [ClientController::class, 'list']);
+	// 	Route::post('/create', [ClientController::class, 'create']);
+	// 	Route::post('/update', [ClientController::class, 'update']);
+	// 	Route::delete('/archive', [ClientController::class, 'delete']);
+	// });
+
+	// Route::prefix('fabrication')->group(function ()
+	// {
+	// 	Route::get('/list', [FabricationController::class, 'list']);
+	// 	Route::post('/create', [FabricationController::class, 'create']);
+	// 	Route::post('/update', [FabricationController::class, 'update']);
+	// 	Route::delete('/archive', [FabricationController::class, 'delete']);
+	// });
 
 	Route::prefix('service')->group(function ()
 	{
@@ -141,12 +151,12 @@ Route::prefix('api')->middleware(['auth:sanctum'])->group(function ()
 		Route::delete('/archive', [ServiceController::class, 'delete']);
 	});
 
-	Route::prefix('product-category')->group(function ()
-	{
-		Route::get('/list', [ProductCategoryController::class, 'list']);
-		Route::get('/info/{id}', [ProductCategoryController::class, 'info']);
-		Route::post('/create', [ProductCategoryController::class, 'create']);
-		Route::put('/update', [ProductCategoryController::class, 'update']);
-		Route::delete('/archive', [ProductCategoryController::class, 'delete']);
-	});
+	// Route::prefix('product-category')->group(function ()
+	// {
+	// 	Route::get('/list', [ProductCategoryController::class, 'list']);
+	// 	Route::get('/info/{id}', [ProductCategoryController::class, 'info']);
+	// 	Route::post('/create', [ProductCategoryController::class, 'create']);
+	// 	Route::put('/update', [ProductCategoryController::class, 'update']);
+	// 	Route::delete('/archive', [ProductCategoryController::class, 'delete']);
+	// });
 });

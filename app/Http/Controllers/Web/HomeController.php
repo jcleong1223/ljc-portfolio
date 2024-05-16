@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Client;
+use App\Models\PortfolioProject;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Http\Requests\ParamIdFormRequest;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,39 @@ class HomeController extends Controller
 		];
 
 		return view('welcome-vue-web', $data);
+	}
+
+	public function homePortfolio()
+	{
+		$projects = PortfolioProject::where('status', 1)
+					->with([
+						'image',
+						'tags' => function ($query) {
+							$query->limit(3);
+						},
+						// 'mediaContents.content',
+					])
+					->orderBy('created_at', 'desc')
+					->get();
+
+		$result = [
+			'projects' => $projects,
+		];
+
+		return self::successResponse('Success', $result);
+	}
+
+	public function homePortfolioInfo(ParamIdFormRequest $request)
+	{
+		$payload = $request->validated();
+
+		$project = PortfolioProject::with('tags')->find($payload['id']);
+
+		$result = [
+			'project' => $project,
+		];
+
+		return self::successResponse('Success', $result);
 	}
 
 	public function home()
