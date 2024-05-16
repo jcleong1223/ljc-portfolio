@@ -94,7 +94,7 @@ export default {
 	created(){
 		this.getNavRoute()
 		this.poweredBy = {
-			text: "ETC Web Design",
+			text: "© 2024 LJC. All rights reserved.",
 			href: "https://www.etctech.com.my/",
 		}
 	},
