@@ -22,11 +22,10 @@
 				</v-col>
 				<v-col cols="auto">
 					<v-btn
-						text
 						small
-						outlined
+						color="primary"
 						height="32"
-						class="px-4"
+						class="px-4 ml-n1 mr-5"
 						:disabled="disabled"
 						@click="emitSearch()"
 					>

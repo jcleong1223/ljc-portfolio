@@ -10,9 +10,40 @@
 						<overview-card
 							title="Admins"
 							:value="dataList.user_count"
-							icon="mdi-account-multiple" color="#36a3f7"
+							icon="mdi-account-multiple" color="#527853"
 						></overview-card>
 					</router-link>
+
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
+					<router-link :to="{ name: 'project.list'}" class="text-decoration-none">
+						<overview-card
+							title="Projects"
+							:value="dataList.project_count"
+							icon="mdi-billboard" color="#527853"
+						></overview-card>
+					</router-link>
+
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
+					<router-link :to="{ name: 'certificate.list'}" class="text-decoration-none">
+						<overview-card
+							title="Certificates"
+							:value="dataList.certificate_count"
+							icon="mdi-certificate" color="#527853"
+						></overview-card>
+					</router-link>
+
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
+					<router-link :to="{ name: 'tag.list'}" class="text-decoration-none">
+						<overview-card
+							title="Tags"
+							:value="dataList.tag_count"
+							icon="mdi-tag" color="#527853"
+						></overview-card>
+					</router-link>
+
 				</v-col>
 				<!-- <v-col cols="12" sm="6" md="4">
 					<router-link :to="{ name: 'game.list'}" class="text-decoration-none">

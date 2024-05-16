@@ -35,7 +35,7 @@ class ProjectController extends Controller
     }
 
 	public function create(CreateProjectFormRequest $request)
-	{dd($request);
+	{
 		$payload = $request->validated();
 
 		$result = DB::transaction(function () use ($payload)
@@ -94,7 +94,7 @@ class ProjectController extends Controller
 	{
 		$payload = $request->validated();
 
-		$object = Service::where('id', $payload['id'])
+		$object = PortfolioProject::where('id', $payload['id'])
 			->withTrashed()
 			->firstOrThrowError();
 

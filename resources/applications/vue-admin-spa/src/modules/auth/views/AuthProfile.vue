@@ -25,8 +25,8 @@
 							</v-col>
 							<v-col cols="12">
 								<v-btn
-									color="info"
-									class="text-capitalize"
+									color="#527853"
+									class="text-capitalize white--text font-weight-medium"
 									:loading="submit_loading"
 									@click="updateAuthProfile()"
 								>

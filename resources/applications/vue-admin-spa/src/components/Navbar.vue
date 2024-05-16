@@ -169,7 +169,7 @@
 					class="pa-4 text-caption text-center relative"
 					style="width: 100%; font-size: 0.6rem !important;"
 				>
-					<a :href="poweredBy.href" target="_BLANK" class="text-decoration-none opposite--text">Powered by <strong>{{ poweredBy.text }}</strong></a>
+					<a :href="poweredBy.href" target="_BLANK" class="text-decoration-none opposite--text"><strong>{{ poweredBy.text }}</strong></a>
 					<div class="position-absolute grey--text px-1" style="right: 0; font-size: 9px;">{{ app_version }}</div>
 				</div>
 			</template>
@@ -198,7 +198,7 @@ export default {
 	created(){
 		this.getNavRoute()
 		this.poweredBy = {
-			text: "ETC Web Design",
+			text: "© 2024 LJC. All rights reserved.",
 			href: "https://www.etctech.com.my/",
 		}
 	},

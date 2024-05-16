@@ -3,7 +3,7 @@
 		<!--- Introduction --->
 		<v-row v-if="!hideTitleBar" align="end">
 			<v-col>
-				<div class="headline font-weight-bold">Projects</div>
+				<div class="text-h5 font-weight-bold">Projects</div>
 				<div class="subtitle-2 grey--text">Projects that registered in this system.</div>
 			</v-col>
 		</v-row>

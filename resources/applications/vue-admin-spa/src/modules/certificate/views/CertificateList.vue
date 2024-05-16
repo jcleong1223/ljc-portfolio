@@ -92,7 +92,6 @@
 		<v-dialog
 			v-model="form_dialog_"
 			max-width="550px"
-			persistent
 			scrollable
 		>
 			<CertificateForm
