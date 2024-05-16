@@ -2,6 +2,7 @@
 const HomePortfolioPage = () => import('./views/HomePortfolioPage.vue')
 const ContactMePage = () => import('./views/ContactMePage.vue')
 const AboutMePage = () => import('./views/AboutMePage.vue')
+const ProjectDetailPage = () => import('./views/ProjectDetailPage.vue')
 
 
 const ContactUsPage = () => import('./views/ContactUsPage.vue')
@@ -17,8 +18,9 @@ export {
 	HomePortfolioPage,
 	ContactMePage,
 	AboutMePage,
+	ProjectDetailPage,
 
-
+	
 	ContactUsPage,
 	AboutUsPage,
 	CapabilitiesPage,

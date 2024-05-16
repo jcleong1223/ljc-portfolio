@@ -4,9 +4,16 @@ const prefix = "/base"
 
 const BaseClient = {
 
-	getHomePage(payload){
-		return axios.get( prefix + "/home", { params:payload })
+	getPortfolioProjectHomePage(payload) {
+		return axios.get(prefix + "/home", { params:payload })
 	},
+
+	getPortfolioProjectDetailPage(id, payload) {
+		return axios.get(prefix + "/project-detail/"+id, {params:payload});
+	},
+	// getHomePage(payload){
+	// 	return axios.get( prefix + "/home", { params:payload })
+	// },
 	submitContactUs(payload){
 		return axios.post( prefix + "/contact-us", payload)
 	},

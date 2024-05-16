@@ -24,10 +24,12 @@ const routes : Array<RouteConfig> = [
 		{
 			path: '', component: SideBarBaseLayout, children: [
 				{ path: '/', name: 'home-page', component: BaseModule.HomePortfolioPage, meta: { auth: null, title: i18n.t("home-page.meta-title") } },
-				{ path: '/contact-leong', name: 'contact-me', component: BaseModule.ContactMePage, meta: { auth: null, title: i18n.t("contact-us-page.meta-title") } },
-				{ path: '/about-leong', name: 'about-me', component: BaseModule.AboutMePage, meta: { auth: null, title: i18n.t("contact-us-page.meta-title") } },
+				{ path: '/contact-leong', name: 'contact-me', component: BaseModule.ContactMePage, meta: { auth: null, title: i18n.t("contact-me-page.meta-title") } },
+				{ path: '/about-leong', name: 'about-me', component: BaseModule.AboutMePage, meta: { auth: null, title: i18n.t("about-me-page.meta-title") } },
+				{ path: '/project-detail/:id', name: 'project.detail', component: BaseModule.ProjectDetailPage, meta: {auth: null, title: i18n.t("project-detail-page.meta-title")}},
+
+
 				{ path: '/about-us', name: 'about-us', component: BaseModule.AboutUsPage, meta: { auth: null, title: i18n.t("about-us-page.meta-title") } },
-				// { path: '/projects', name: 'projects', component: BaseModule.ProjectsPage, meta: {auth: null, title: i18n.t("projects-page.meta-title")}},
 				{ path: '/capabilities', name: 'capabilities', component: BaseModule.CapabilitiesPage, meta: { auth: null, title: i18n.t("capabilities-page.meta-title") } },
 				{ path: '/capabilities/:id', name: 'capability.info', component: BaseModule.CapabilityDetailPage, meta: { auth: null, title: i18n.t("capability-detail-page.meta-title") } },
 				{ path: '/fabrications', name: 'fabrications', component: BaseModule.FabricationsPage, meta: { auth: null, title: i18n.t("fabrications-page.meta-title")}},

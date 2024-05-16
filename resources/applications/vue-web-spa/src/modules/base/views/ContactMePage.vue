@@ -106,17 +106,17 @@
 						cols="12"
 						style="background-color:transparent"
 					>
-					<div class="card-effect ml-n10" id="card">
-						<div class="content">
-							<div class="d-block">
-								<img src="/images/contactus/contactme.jpg" width="100%" class="text-center mb-10 rounded-xl"/>
-								<h2 class="font-poppins font-weight-medium ">Full Stack Developer </h2>
-								<span>
-									I am available for freelance work. Contact with me now !!<br>Email: leongjc1223@gmail.com<br>Phone: leongjc1223@gmail.com
-								</span>
+						<div id="card" class="card-effect ml-n10">
+							<div class="content">
+								<div class="d-block">
+									<img src="/images/contactus/contactme.jpg" width="100%" class="text-center mb-10 rounded-xl" />
+									<h2 class="font-poppins font-weight-medium ">Full Stack Developer </h2>
+									<span>
+										I am available for freelance work. Contact with me now !!<br>Email: leongjc1223@gmail.com<br>Phone: leongjc1223@gmail.com
+									</span>
+								</div>
 							</div>
 						</div>
-					</div>
 					</v-col>
 				</v-row>
 			</v-container>
@@ -176,10 +176,10 @@ export default {
 	18.1%,20.1%,30%,40.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
 		color: #ffffff;
 		text-shadow: 0 0 10px #78C7C8,
-		 0 0 10px #78C7C8,
-		  0 0 30px #78C7C8,
-		   0 0 70px #78C7C8,
-		   0 0 100px #78C7C8
+		0 0 10px #78C7C8,
+		0 0 30px #78C7C8,
+		0 0 70px #78C7C8,
+		0 0 100px #78C7C8
 	}
 }
 
@@ -212,7 +212,7 @@ export default {
 
 .card-effect:hover{
 	scale: 1.05;
-  	rotate: 3deg;
+	rotate: 3deg;
 	transition: 0.8s;
 	box-shadow: 0px 0px 45px -5px rgba(81,255,105,0.75);
 }
@@ -356,10 +356,10 @@ button:before {
 
 button div {
 	border-radius: 15px;
-  	transition: 500ms;
-  	position: absolute;
-  	background-color: rgb(53, 244, 174);
-  	box-shadow: 0 0 15px rgb(53, 244, 174), 0 0 30px rgb(53, 244, 174), 0 0 50px rgb(53, 244, 174);
+	transition: 500ms;
+	position: absolute;
+	background-color: rgb(53, 244, 174);
+	box-shadow: 0 0 15px rgb(53, 244, 174), 0 0 30px rgb(53, 244, 174), 0 0 50px rgb(53, 244, 174);
 }
 
 button .top {

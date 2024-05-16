@@ -21,44 +21,43 @@
 						cols="12"
 						style="background-color:transparent;text-align: -webkit-center;"
 					>
-					<div class="polaroid-card" id="card">
-						<div class="content">
-							<div class="d-block">
-								<img src="/images/profileimg_placeholder.png" width="100%" class="text-center mb-10 rounded-md"/>
-								<h2 class="font-poppins font-weight-medium black--text">Full Stack Developer </h2>
+						<div id="card" class="polaroid-card">
+							<div class="content">
+								<div class="d-block">
+									<img src="/images/profileimg_placeholder.png" width="100%" class="text-center mb-10 rounded-md" />
+									<h2 class="font-poppins font-weight-medium black--text">Full Stack Developer </h2>
+								</div>
 							</div>
 						</div>
-					</div>
 					</v-col>
 					<v-col
 						md="7"
 						cols="12"
 						style="background-color:transparent"
 					>
-					<div
-						class="d-block"
-					>
-						<span
-							class="font-poppins text-h3 pl-md-0 title-style"
-						>
-							<b>Hello, I'm Kevin Leong </b>
-						</span>
-						<span style="font-size: 30px;">&#128512;</span>
-						<br/>
 						<div
-							class="mt-10 mr-10"
+							class="d-block"
 						>
-							<span>If you have a peanut allergy, it's crucial to get tested by an allergist to determine if you have allergies to other nuts like almonds and walnuts. Skin prick tests or blood tests can help diagnose tree nut allergies</span>
+							<span
+								class="font-poppins text-h3 pl-md-0 title-style"
+							>
+								<b>Hello, I'm Kevin Leong </b>
+							</span>
+							<span style="font-size: 30px;">&#128512;</span>
+							<br />
+							<div
+								class="mt-10 mr-10"
+							>
+								<span>If you have a peanut allergy, it's crucial to get tested by an allergist to determine if you have allergies to other nuts like almonds and walnuts. Skin prick tests or blood tests can help diagnose tree nut allergies</span>
+							</div>
+							<div
+								class="mt-10 mr-10"
+								style="font-size: 60px;"
+							>
+								<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
+								<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
+							</div>
 						</div>
-						<div
-							class="mt-10 mr-10"
-							style="font-size: 60px;"
-						>
-							<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
-							<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
-						</div>
-					</div>
-
 					</v-col>
 				</v-row>
 			</v-container>
@@ -73,9 +72,9 @@
 					class="mb-10"
 				>
 					<span
-							class="font-poppins text-h3 pl-md-0 ml-6"
-						>
-							<b>My Skills </b>
+						class="font-poppins text-h3 pl-md-0 ml-6"
+					>
+						<b>My Skills </b>
 					</span>
 				</div>
 				<v-row
@@ -91,7 +90,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center"/>
+									<img src="/images/html.png" width="50%" class="text-center" />
 									<p>HTML</p>
 								</div>
 								<div class="content">
@@ -110,7 +109,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center"/>
+									<img src="/images/css.png" width="50%" class="text-center" />
 									<p>CSS</p>
 								</div>
 								<div class="content">
@@ -129,7 +128,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/javascript.png" width="50%" class="text-center"/>
+									<img src="/images/javascript.png" width="50%" class="text-center" />
 									<p>Javascript</p>
 								</div>
 								<div class="content">
@@ -148,7 +147,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center"/>
+									<img src="/images/css.png" width="50%" class="text-center" />
 									<p>CSS</p>
 								</div>
 								<div class="content">
@@ -167,7 +166,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center"/>
+									<img src="/images/html.png" width="50%" class="text-center" />
 									<p>HTML</p>
 								</div>
 								<div class="content">
@@ -192,7 +191,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center"/>
+									<img src="/images/html.png" width="50%" class="text-center" />
 									<p>HTML</p>
 								</div>
 								<div class="content">
@@ -211,7 +210,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center"/>
+									<img src="/images/css.png" width="50%" class="text-center" />
 									<p>CSS</p>
 								</div>
 								<div class="content">
@@ -230,7 +229,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/javascript.png" width="50%" class="text-center"/>
+									<img src="/images/javascript.png" width="50%" class="text-center" />
 									<p>Javascript</p>
 								</div>
 								<div class="content">
@@ -249,7 +248,7 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center"/>
+									<img src="/images/css.png" width="50%" class="text-center" />
 									<p>CSS</p>
 								</div>
 								<div class="content">
@@ -268,8 +267,8 @@
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center"/>
-									<p>HTML</p>
+									<img src="/images/html.png" width="50%" class="text-center" />
+									<p>HTML </p>
 								</div>
 								<div class="content">
 									<p class="heading">
@@ -325,9 +324,9 @@
 					class="mb-10"
 				>
 					<span
-							class="font-poppins text-h3 pl-md-0 ml-6"
-						>
-							<b>Certificates </b>
+						class="font-poppins text-h3 pl-md-0 ml-6"
+					>
+						<b>Certificates </b>
 					</span>
 					<!-- <div ref="certificatesTargetDiv" class="d-flex justify-center"></div> -->
 				</div>
@@ -516,10 +515,10 @@ export default {
 	18.1%,20.1%,30%,40.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
 		color: #ffffff;
 		text-shadow: 0 0 10px #78C7C8,
-		 0 0 10px #78C7C8,
-		  0 0 30px #78C7C8,
-		   0 0 70px #78C7C8,
-		   0 0 100px #78C7C8
+		0 0 10px #78C7C8,
+		0 0 30px #78C7C8,
+		0 0 70px #78C7C8,
+		0 0 100px #78C7C8
 	}
 }
 

@@ -22,7 +22,9 @@ Route::prefix('api')->middleware([])->group(function ()
 
 	Route::prefix('base')->group(function ()
 	{
-		Route::get('/home', [HomeController::class, 'home']);
+		Route::get('/home', [HomeController::class, 'homePortfolio']);
+		Route::get('/project-detail/{id}', [HomeController::class, 'homePortfolioInfo']);
+		// Route::get('/home', [HomeController::class, 'home']);
 		Route::post('/contact-us', [ContactUsController::class, 'sendEmail']);
 		Route::get('/capabilities', [CapabilityController::class, 'home']);
 		Route::get('/capabilities/{id}', [CapabilityController::class, 'info']);
