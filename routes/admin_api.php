@@ -15,7 +15,8 @@ use App\Http\Controllers\Admin\{
 	ProductController,
 	PublicFileController,
 	ServiceController,
-	UserController,
+    TagController,
+    UserController,
 };
 use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -106,6 +107,14 @@ Route::prefix('api')->middleware(['auth:sanctum'])->group(function ()
 		Route::post('/update', [ProjectController::class, 'update']);
 		Route::delete('/archive', [ProjectController::class, 'delete']);
 		Route::get('/tags-list', [ProjectController::class, 'getTagList']);
+	});
+
+	Route::prefix('tag')->group(function ()
+	{
+		Route::get('/list', [TagController::class, 'list']);
+		Route::post('/create', [TagController::class, 'create']);
+		Route::post('/update', [TagController::class, 'update']);
+		Route::delete('/archive', [TagController::class, 'delete']);
 	});
 
 	// Route::prefix('product')->group(function ()

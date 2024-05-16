@@ -10,7 +10,7 @@ import * as _GeneralModule from '@src/modules/_general/router'
 import * as CertificateModule from '@src/modules/certificate/router'
 import * as ServiceModule from '@src/modules/service/router'
 import * as PortfolioProjectModule from '@src/modules/project/router'
-// import * as TagModule from '@src/modules/tag/router'
+import * as TagModule from '@src/modules/tag/router'
 // import * as BannerModule from '@src/modules/banner/router'
 // import * as ProductModule from '@src/modules/product/router'
 // import * as CareerModule from '@src/modules/career/router'
@@ -54,7 +54,7 @@ const routes : Array<RouteConfig> = [
 		{ path: '/projects/list', name: 'project.list', component: PortfolioProjectModule.ProjectList, meta: { auth: true, title: 'Project List' } },
 
 		// tags
-		{ path: '/tags/list', name: 'tag.list', component: PortfolioProjectModule.ProjectList, meta: { auth: true, title: 'Project List' } },
+		{ path: '/tags/list', name: 'tag.list', component: TagModule.TagList, meta: { auth: true, title: 'Tag List' } },
 
 
 		// banner (not in use)
@@ -67,7 +67,7 @@ const routes : Array<RouteConfig> = [
 		// career (not in use)
 		// { path: '/careers/list', name: 'career.list', component: CareerModule.CareerList, meta: { auth: true, title: 'Career List' } },
 		// { path: '/careers/:id', name: 'career.info', component: CareerModule.CareerInfo, meta: { auth: true, title: 'Career Info' } },
-		
+
 		// fabrication (not in use)
 		// { path: '/fabrications/list', name: 'fabrication.list', component: FabricationModule.FabricationList, meta: { auth: true, title: 'Fabrication List' } },
 		// { path: '/fabrications/:id', name: 'fabrication.info', component: FabricationModule.FabricationInfo, meta: { auth: true, title: 'Fabrication Info' } },
