@@ -53,7 +53,12 @@ class HomeController extends Controller
 	{
 		$payload = $request->validated();
 
-		$project = PortfolioProject::with('tags')->find($payload['id']);
+		$project = PortfolioProject::with([
+			'image',
+			'tags',
+			'mediaContents.content',
+		])
+		->find($payload['id']);
 
 		$result = [
 			'project' => $project,

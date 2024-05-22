@@ -25,8 +25,9 @@ class ServiceController extends Controller
 
 		$result->load([
 			'image',
-			'mediaContents.content',
+			'mediaContents',
 		]);
+		dd($result);
 		return self::successResponse('Success', $result);
 	}
 

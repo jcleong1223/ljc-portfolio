@@ -32,7 +32,7 @@ class TagController extends Controller
 
     public function create(CreateTagFormRequest $request)
     {
-        
+
         $payload = $request->validated();
 
         $result = DB::transaction(function () use ($payload) {
@@ -43,7 +43,7 @@ class TagController extends Controller
                 'seq_value' => $payload['seq_value']
             ]);
 
-            $tag->syncResizedImageFor('webImage', $payload['icon'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
+            $tag->syncResizedImageFor('webImage', $payload['web_image'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
 
             return $tag;
         });
@@ -51,10 +51,10 @@ class TagController extends Controller
         return self::successResponse('Success', $result);
     }
 
-    public function update(UpdateTagFormRequest $request) 
+    public function update(UpdateTagFormRequest $request)
     {
         $payload = $request->validated();
-
+// dd($payload);
         $result = DB::transaction(function () use ($payload)
 		{
 			$tag = Tag::where('id', $payload['id'])
@@ -68,7 +68,7 @@ class TagController extends Controller
 				'status' => $payload['status'],
 			]);
 
-			$tag->syncResizedImageFor('webImage', $payload['icon'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
+			$tag->syncResizedImageFor('webImage', $payload['web_image'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
 
 			return $tag;
 		});

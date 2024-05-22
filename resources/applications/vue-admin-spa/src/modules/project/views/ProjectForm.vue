@@ -8,11 +8,11 @@
 			<v-row dense>
 				<v-col cols="12" md="7">
 					<w-image-input-field
-						v-model="dataForm.image"
+						v-model="dataForm.web_image"
 						label="Preview Image (1:1)"
 						:ratio="1"
 						:width="120"
-						:error-messages="errors.image"
+						:error-messages="errors.web_image"
 						class="pb-2"
 					>
 					</w-image-input-field>
@@ -28,9 +28,20 @@
 				</v-col>
 
 				<v-col cols="12" md="12">
+					<v-text-field
+						v-model="dataForm.website_url"
+						label="Website URL"
+						placeholder="Website URL"
+						dense
+						:error-messages="errors.website_url"
+					></v-text-field>
+				</v-col>
+
+				<v-col cols="12" md="12">
 					<v-textarea
 						v-model="dataForm.short_description"
-						label="Short Description" placeholder="Short description about this project"
+						label="Short Description" 
+						placeholder="Short description about this project"
 						dense
 						counter
 						:error-messages="errors.short_description"
@@ -82,6 +93,51 @@
 				</v-col>
 
 				<v-col cols="12" md="12">
+					<v-menu
+						ref="menu"
+						v-model="menu"
+						:close-on-content-click="true"
+						transition="scale-transition"
+						offset-y
+						max-width="100%"
+						min-width="auto"
+					>
+						<template #activator="{ on, attrs }">
+							<v-text-field
+								v-model="dataForm.project_date"
+								label="Project Date"
+								prepend-icon="mdi-calendar"
+								readonly
+								v-bind="attrs"
+								v-on="on"
+							></v-text-field>
+						</template>
+						<v-date-picker
+							v-model="dataForm.project_date"
+							type="month"
+							no-title
+							scrollable
+						>
+							<v-spacer></v-spacer>
+							<v-btn
+								text
+								color="primary"
+								@click="menu = false"
+							>
+								Cancel
+							</v-btn>
+							<v-btn
+								text
+								color="primary"
+								@click="$refs.menu.save(dataForm.project_date)"
+							>
+								OK
+							</v-btn>
+						</v-date-picker>
+					</v-menu>
+				</v-col>
+
+				<v-col cols="12" md="12">
 					<v-select
 						v-model="dataForm.tags"
 						:items="tags"
@@ -119,9 +175,7 @@
 
 <script>
 import { errorHandlerMixin } from "@src/mixins/ErrorHandlerMixin"
-// import WDataSelection from '@shared/widgets/WDataSelection.vue'
 import WImageInputField from '@shared/widgets/FileUpload/WImageInputField.vue'
-// import ServiceClient from '../client'
 import ProjectClient from '../client'
 import CkeditorInput from '@src/components/CkeditorInput.vue'
 
@@ -156,6 +210,7 @@ export default{
 			errors: {},
 			submit_loading: false,
 			tags: [],
+			menu: false,
 		}
 	},
 	watch:{
@@ -169,16 +224,14 @@ export default{
 					this.dataForm.seq_value = 1;
 				}
 				if(this.dataForm.tags?.length > 0 && this.action == 'edit'){
-
 					this.dataForm.tags = this.dataForm.tags.map(tag => tag.id);
-
 				}
-				// if(this.dataForm.media_contents){
-				// 	this.dataForm.media_contents = this.dataForm.media_contents.map((item)=>{
-				// 		item.file_url = item.content.file_url
-				// 		return item
-				// 	})
-				// }
+				if(this.dataForm.media_contents){
+					this.dataForm.media_contents = this.dataForm.media_contents.map((item)=>{
+						item.file_url = item.content.file_url
+						return item
+					})
+				}
 
 			},
 			immediate: true,
@@ -217,13 +270,20 @@ export default{
 			let payload = new FormData()
 			payload.append("id", item.id)
 			payload.append("title", item.title ?? '');
+			payload.append("website_url", item.website_url ?? '');
 			payload.append("short_description", item.short_description ?? '');
 			payload.append("description", item.description ?? '');
 			payload.append("seq_value", item.seq_value ?? '');
 			payload.append("status", item.status ?? '');
 
-			if(item.image){
-				payload.append("image", item.image instanceof File ? item.image : item.image.id)
+			if(item.project_date){
+				const [year, month] = item.project_date.split('-');
+				item.project_date = `${year}-${month}-01`;
+				payload.append("project_date", item.project_date ?? '');
+			}
+
+			if(item.web_image){
+				payload.append("web_image", item.web_image instanceof File ? item.web_image : item.web_image.id)
 			}
 
 			if(item.media_contents){
@@ -233,9 +293,7 @@ export default{
 			}
 
 			if(item.tags){
-				console.log(item.tags);
 				item.tags.forEach((tagId, key) => {
-					console.log(tagId);
 					payload.append(`tags[${key}]`, tagId)
 				})
 			
@@ -249,12 +307,14 @@ export default{
 			}).catch((err) => {
 				this.errors = this.errorHandler_(err, [
 					'title',
+					'website_url',
 					'short_description',
 					'description',
 					'seq_value',
 					'status',
 					'tags',
-					'image',
+					'web_image',
+					'project_date'
 				])
 			}).finally(() => {
 				this.submit_loading = false

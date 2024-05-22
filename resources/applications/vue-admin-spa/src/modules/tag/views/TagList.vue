@@ -257,7 +257,6 @@ export default{
 				let { data, total } = res.data.data
 				this.resourceDataSet_ = data
 				this.totalData_ = total
-				console.log(this.resourceDataSet_);
 			}).catch((err)=>{
 				this.errorHandler_(err)
 			}).finally(()=>{

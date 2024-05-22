@@ -27,7 +27,8 @@ class CreateTagFormRequest extends FormRequest
 			'level' => ['required', 'integer'],
 			'status' => ['required', 'in:0,1'],
 			'seq_value' => ['required', 'integer', 'min:1'],
-			'icon' => ['nullable', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
+			'web_image' => ['nullable', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
+			// 'icon' => ['nullable', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
 		];
 	}
 

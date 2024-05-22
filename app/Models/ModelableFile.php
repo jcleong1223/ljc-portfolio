@@ -71,6 +71,7 @@ class ModelableFile extends Model
 	public const MODULE_PATH_CAPABILITY_CONTENT = 'capability-content-image';
 	public const MODULE_PATH_CAREER_RESUME_FILE = "career-resume-file";
 	public const MODULE_PATH_PORTFOLIO_IMAGE = 'portfolio-image';
+	public const MODULE_PATH_PORTFOLIO_CONTENT_IMAGE = 'portfolio-content-image';
 	public const MODULE_PATH_TAG_WEB_IMAGE = 'tag-web-image';
 
 	// accessor

@@ -24,14 +24,16 @@ class CreateProjectFormRequest extends FormRequest
 	{
 		return [
 			'title' => ['required', 'max:100'],
+			'website_url' => ['nullable', 'max:150'],
 			'short_description' => ['required', 'max:300'],
 			'description' => ['required', 'max:500'],
 			'status' => ['required', 'in:0,1'],
 			'seq_value' => ['required', 'integer', 'min:1'],
 			'media_contents' => ['nullable', 'array'],
 			'media_contents.*' => ['required', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
-			'image' => ['required', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
+			'web_image' => ['required', new FileOrElse(['max:10240', 'mimes:jpeg,jpg,png,webp'], [])],
 			'tags' => ['nullable', 'array'],
+			'project_date' => ['nullable'],
 		];
 	}
 

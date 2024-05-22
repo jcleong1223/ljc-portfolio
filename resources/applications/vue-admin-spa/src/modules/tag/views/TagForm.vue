@@ -8,11 +8,11 @@
 			<v-row dense class="form-gap-2">
 				<v-col cols="12" md="6">
 					<w-image-input-field
-						v-model="dataForm.icon"
+						v-model="dataForm.web_image"
 						label="Preview Image (1:1)"
 						:ratio="1/1"
 						:width="160"
-						:error-messages="errorCollector.icon"
+						:error-messages="errorCollector.web_image"
 					></w-image-input-field>
 				</v-col>
 				<v-col cols="12" md="12">
@@ -167,8 +167,8 @@ export default{
 			payload.append("seq_value", item.seq_value ?? '')
 			payload.append("status", item.status ?? '')
 
-			if(item.icon){
-				payload.append("icon", item.icon instanceof File ? item.icon : item.icon.id)
+			if(item.web_image){
+				payload.append("web_image", item.web_image instanceof File ? item.web_image : item.web_image.id)
 			}
 
 			let theApi = (this.action == "new") ? TagClient.create(payload) : TagClient.update(payload)
@@ -177,7 +177,7 @@ export default{
 				this.initialize()
 			}).catch((err)=>{
 				this.errorCollector = this.errorHandler_(err, [
-					'icon',
+					'web_image',
 					'seq_value',
 					'title',
 					'status',

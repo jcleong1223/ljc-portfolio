@@ -18,12 +18,13 @@ class CreatePortfolioProjectsTable extends Migration
             $table->string('title');
             $table->text('short_description');
 			$table->longText('description');
-            $table->string('url', 100)->nullable();
+            $table->string('website_url', 150)->nullable();
             $table->tinyInteger('status')->default(1); // 1:Active,0:Inactive
+            $table->date('project_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
-    }   
+    }
 
     /**
      * Reverse the migrations.

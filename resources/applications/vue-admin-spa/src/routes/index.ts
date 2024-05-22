@@ -52,6 +52,7 @@ const routes : Array<RouteConfig> = [
 
 		// portfolio project 
 		{ path: '/projects/list', name: 'project.list', component: PortfolioProjectModule.ProjectList, meta: { auth: true, title: 'Project List' } },
+		{ path: '/projects/:id', name: 'project.info', component: PortfolioProjectModule.ProjectInfo, meta: { auth: true, title: 'Project Info' } },
 
 		// tags
 		{ path: '/tags/list', name: 'tag.list', component: TagModule.TagList, meta: { auth: true, title: 'Tag List' } },

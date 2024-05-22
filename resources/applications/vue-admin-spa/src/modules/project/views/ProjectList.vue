@@ -61,6 +61,16 @@
 				disable-sort
 				:item-class="row_classes_"
 			>
+				<template #[`item.web_image`]="{ item }">
+					<v-img
+						v-if="item.web_image"
+						max-width="150"
+						:aspect-ratio="16/9"
+						:src="item.web_image.file_url"
+						class="clickable"
+						@click="viewImage(item.web_image)"
+					></v-img>
+				</template>
 				<template #[`item.status`]="{ item }">
 					{{ item.status ? 'Active' : 'Inactive' }}
 				</template>
@@ -86,7 +96,7 @@
 					></v-img>
 				</template>
 				<template #[`item.action`]="{ item }">
-					<v-btn icon small :to="{ name: 'capability.info', params : { id: item.id } }">
+					<v-btn icon small :to="{ name: 'project.info', params : { id: item.id } }">
 						<v-icon small>mdi-eye</v-icon>
 					</v-btn>
 					<w-dropdown-menu
@@ -228,7 +238,7 @@ export default{
 		return {
 			table_headers: [
 				{ text: 'Id', value: 'id' },
-				{ text: 'Image', value: 'image' },
+				{ text: 'Image', value: 'web_image' },
 				{ text: 'Title', value: 'title' },
 				{ text: 'Status', value: 'status' },
 				{ text: 'Sequence Value', value: 'seq_value' },

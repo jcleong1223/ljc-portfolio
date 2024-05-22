@@ -7,7 +7,7 @@ use App\Http\Requests\Admin\Project\CreateProjectFormRequest;
 use App\Http\Requests\Admin\Project\ListFormRequest;
 use App\Http\Requests\Admin\Project\UpdateProjectFormRequest;
 use App\Http\Requests\IdOnlyFormRequest;
-use App\Http\Services\CapabilityService;
+use App\Http\Services\ProjectService;
 use App\Models\PortfolioProject;
 use App\Models\ModelableFile;
 use App\Models\ProjectTag;
@@ -30,6 +30,7 @@ class ProjectController extends Controller
 		$result->load([
 			'webImage',
 			'tags',
+			'mediaContents.content',
 		]);
 		return self::successResponse('Success', $result);
     }
@@ -42,13 +43,16 @@ class ProjectController extends Controller
 		{
 			$project = PortfolioProject::create([
 				'title' => $payload['title'],
+				'website_url' => $payload['website_url'],
 				'short_description' => $payload['short_description'],
 				'description' => $payload['description'],
 				'status' => $payload['status'],
 				'seq_value' => $payload['seq_value'],
+				'project_date' => $payload['project_date'],
 			]);
-			$project->syncResizedImageFor('image', $payload['image'], ModelableFile::MODULE_PATH_PORTFOLIO_IMAGE, 2000);
-			// CapabilityService::syncGalleries($project, $payload['media_contents'] ?? []);
+			$project->syncResizedImageFor('image', $payload['web_image'], ModelableFile::MODULE_PATH_PORTFOLIO_IMAGE, 2000);
+
+			ProjectService::syncGalleries($project, $payload['media_contents'] ?? []);
 
 			foreach($payload['tags'] as $tag){
 				$project->tags()->attach($tag);
@@ -69,20 +73,26 @@ class ProjectController extends Controller
 			$project = PortfolioProject::where('id', $payload['id'])
 						->withTrashed()
 						->firstOrThrowError();
-						// dd($payload['tags']);
+
 			$project->update([
 				'title' => $payload['title'],
+				'website_url' => $payload['website_url'],
 				'short_description' => $payload['short_description'],
 				'description' => $payload['description'],
 				'status' => $payload['status'],
 				'seq_value' => $payload['seq_value'],
+				'project_date' => $payload['project_date'],
 			]);
+
+			$project->syncResizedImageFor('webImage', $payload['web_image'], ModelableFile::MODULE_PATH_PORTFOLIO_IMAGE, 2000);
 
 			if (!empty($payload['tags'])) {
 				$project->tags()->sync($payload['tags']);
 			} else {
 				$project->tags()->detach();
 			}
+
+			ProjectService::syncGalleries($project, $payload['media_contents'] ?? []);
 
 			return $project;
 		});

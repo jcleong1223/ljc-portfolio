@@ -22,9 +22,11 @@ class PortfolioProject extends Model
 
     protected $fillable = [
         'title',
+        'website_url',
         'short_description',
         'description',
         'status',
+        'project_date'
     ];
 
     protected $hidden = [];
@@ -47,7 +49,7 @@ class PortfolioProject extends Model
 
     public function mediaContents()
 	{
-		return $this->hasMany(ServiceContent::class)->orderBy('seq_value', 'ASC');
+		return $this->hasMany(ProjectContent::class)->orderBy('seq_value', 'ASC');
 	}
 
     public function tags()
