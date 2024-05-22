@@ -158,7 +158,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 /* Information card style and effect */
 .title-style {

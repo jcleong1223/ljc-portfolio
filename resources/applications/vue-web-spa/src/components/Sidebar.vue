@@ -69,6 +69,14 @@
 					</v-list-item>
 				</template>
 			</v-list>
+
+			<div class="ml-4 mt-3 ">
+				<button class="letter-animation floating">
+					<div class="LETTER">
+						<span class="special_text">Resume <span class="mdi mdi-download pl-1"></span></span>
+					</div>
+				</button>
+			</div>
 		</template>
 	</div>
 </template>
@@ -121,3 +129,109 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+.letter-animation {
+	text-align: center;
+	background-color: #171717;
+	padding: 10px 25px;
+	border: 3px solid transparent;
+	border-radius: 0.6em;	
+	transition: 0.2s;
+}
+
+.letter-animation:hover {
+	background-color: #000000;
+	border: 3px solid #3d93ee;
+	box-shadow: 0px 0px 27px 5px rgba(117, 219, 215, 0.6);
+}
+
+.LETTER {
+	color: #fff;
+	font-size: 19px;
+	font-weight: bold;
+	overflow: hidden;
+	border-right: 4px solid transparent;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+
+.letter-animation:hover .LETTER {
+	border-right: 4px solid #3d93ee;
+	animation: letters 1.5s steps(22, end),
+	cursor .4s step-end infinite;
+}
+
+.special_text {
+	background: linear-gradient(
+		90deg,
+		#866ee7,
+		#ea60da,
+		#ed8f57,
+		#fbd41d,
+		#2cca91,
+		#38dbff,
+		#4ef72d,
+		#a46ec8,
+		#ea60da,
+		#f5e42a
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	display: block;
+	font-weight: 900;
+}
+
+.floating {
+	animation: 3s infinite alternate floating-up;
+	/* animation: bounce_ani 1s infinite alternate; */
+}
+
+@keyframes letters {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes cursor {
+	from {
+		border-color: transparent
+	}
+
+	50% {
+		border-color: #3d93ee
+	}
+}
+
+@keyframes floating-up {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes bounce_ani {
+  0%,
+    100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+</style>

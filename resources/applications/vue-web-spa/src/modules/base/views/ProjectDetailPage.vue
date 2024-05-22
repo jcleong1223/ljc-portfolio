@@ -8,24 +8,24 @@
 			color="transparent"
 			class="ml-md-10 mt-0"
 		>
-			<section class="mt-16 pb-2 pt-0">
+			<section class="mt-16 pb-2 pt-0 pr-15">
 				<v-container>
 					<v-row :class="$vuetify.breakpoint.smAndDown ? 'pl-8' :'justify-space-between'">
-						<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'">{{ project.title }}</div>
-						<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10" style="color: #DAA520;">
+						<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10" style="color: #66FCD1;">
 							<router-link :to="{ name: 'home-page' }" class="text-color-unset">
 								<span class="font-family-inter font-size-subtitle">
-									<v-icon color="#DAA520" size="x-large" class="text-end">
-										mdi-arrow-left
-									</v-icon>Back
+									<div class="btn_container">
+										<button class="btn_back">Back</button>
+									</div>
 								</span>
 							</router-link>
 						</div>
+						<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'">{{ project.title }}</div>
 					</v-row>
 				</v-container>
 			</section>
 
-			<section :class="$vuetify.breakpoint.smAndDown ? 'pa-0' : 'mb-10 pl-8'">
+			<section :class="$vuetify.breakpoint.smAndDown ? 'pa-0' : 'mb-5 pl-8 pr-15'">
 				<v-container class="pa-0">
 						<div :class="$vuetify.breakpoint.smAndDown ? '' : 'my-8 text-md-h5'" no-gutter>
 						<!-- <custom-carousel-with-thumbnail
@@ -64,16 +64,16 @@
 							@slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
 						>
 							<vueper-slide
-								v-for="(slide, i) in slides"
+								v-for="(gallery, i) in galleries"
 								:key="i"
-								:image="slide.image"
+								:image="gallery.file_url"
 							>
 							</vueper-slide>
 						</vueper-slides>
 						<vueper-slides
 							ref="vueperslides2"
 							class="no-shadow thumbnails"
-							:visible-slides="slides.length"
+							:visible-slides="galleries.length"
 							fixed-height="75px"
 							:bullets="false"
 							:touchable="false"
@@ -82,9 +82,10 @@
 							@slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
 						>
 							<vueper-slide
-								v-for="(slide, i) in slides"
+								v-for="(gallery, i) in galleries"
 								:key="i"
-								:image="slide.image"
+								:image="gallery.file_url"
+								class="mt-5"
 								@click.native="$refs.vueperslides2.goToSlide(i)"
 							>
 							</vueper-slide>
@@ -95,52 +96,76 @@
 
 			<section class="mb-10 pa-md-0 px-8">
 				<v-container>
-					<v-row class="justify-start">
-						<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Language/Technology Used</div>
-					</v-row>
-					<v-row class="justify-start">
-						<v-chip
-							v-for="(tag, j) in tags"
-							:key="j"
-							class="ma-2 font-family-primary"
-							color=""
-							text-color="white"
+					<v-row>
+						<v-col
+							cols="12"
+							md="6"
 						>
-							{{ tag.title }}
-						</v-chip>
-					</v-row>
-				</v-container>
-			</section>
-
-			<section class="mb-10 pa-md-0 px-8">
-				<v-container>
-					<v-row class="justify-start">
-						<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Website URL</div>
-					</v-row>
-					<v-row class="justify-start">
-						<div class="text-justify font-size-text mx-0">
-							<v-chip
-								class="ma-2 font-family-primary"
-								color="yellow"
-								text-color="black"
-								link
-							>
-								<v-icon
-									left
-									color="red"
+							<v-row class="justify-start">
+								<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Language/Technology Used</div>
+							</v-row>
+							<v-row v-if="tags.length > 0" class="justify-start">
+								<button 
+									v-for="(tag, j) in tags"
+									:key="j"
+									class="chip-tag ma-2 font-family-primary"
 								>
-									mdi-web
-								</v-icon>
-								www.google.com <span class="ml-3 mdi mdi-open-in-new"></span>
-							</v-chip>
-						</div>
+									{{ tag.title }}
+								</button>
+							</v-row>
+							<v-row v-else class="justify-start">
+								<span> - </span>
+							</v-row>
+						</v-col>
+						<v-col
+							cols="12"
+							md="6"
+						>
+							<v-row class="justify-start">
+								<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Website URL</div>
+							</v-row>
+							<v-row v-if="project.website_url" class="justify-start">
+								<div class="text-justify font-size-text mx-0">
+									<!-- <v-chip
+										class="ma-2 font-family-primary"
+										color="yellow"
+										text-color="black"
+										link
+									>
+										<v-icon
+											left
+											color="red"
+										>
+											mdi-web
+										</v-icon>
+										{{ project.website_url }} <span class="ml-3 mdi mdi-open-in-new"></span>
+									</v-chip> -->
+									<a 
+										class="chip-tag d-flex ma-2 px-5 py-0 font-family-primary"
+										style="cursor: pointer; text-decoration: none; color: white;"
+									>
+										<v-icon
+											left
+											color="#3d93ee"
+											class="py-2"
+										>
+											mdi-web
+										</v-icon>
+										{{ project.website_url }}
+									</a>
+								</div>
+							</v-row>
+							<v-row v-else class="justify-start">
+								<div class="text-justify font-size-text mx-0">
+									<span> - </span>
+								</div>
+							</v-row>
+						</v-col>
 					</v-row>
 				</v-container>
 			</section>
 
-			<v-divider :thickness="4" color="black" :width="$vuetify.breakpoint.mdAndUp ? '78%' : '90%' "></v-divider>
-
-			<section class="mb-15 pa-md-0 px-8">
+			<section class="px-md-0 px-8 pb-15">
 				<v-container>
 					<v-row class="justify-start">
 						<div class="my-8 font-weight-bold text-left font-poppins font-size-subtitle mx-0 px-0">Description</div>
@@ -178,11 +203,7 @@ export default {
 		return {
 			project: [],
 			tags: [],
-			slides: [
-				{ image: '/images/html.png' },
-				{ image: '/images/css.png'},
-				{ image: '/images/javascript.png' }
-			]
+			galleries: [],
 		}
 	},
 	computed:{
@@ -207,8 +228,22 @@ export default {
 				const result = res.data.data
 				this.project = result.project
 				this.tags = result.project.tags
-				console.log(this.tags)
-				// console.log(this.capability,this.capability.media_contents.length );
+				const tagStyle = [
+                    "background-color: pink; ",
+
+                ];
+
+				this.tags = result.project.tags.map((tag, index) => ({
+					...tag,
+					style: tagStyle[index % tagStyle.length]
+				}))
+
+				console.log(this.tags);
+
+				this.galleries = [
+					result.project.image,
+					...result.project.media_contents.map((item) => item.content)
+				];
 				this.loading = true;
 			}).catch((err) => {
 				this.errorHandler_(err);
@@ -226,6 +261,7 @@ export default {
 {
 	-webkit-transform: translateX(-10%);
 	transition: 0.5s;
+	text-indent: 30px;
 }
 
 .small-img:hover
@@ -233,5 +269,178 @@ export default {
 	transform: scale(108%);
 	transition: 0.5s;
 }
+
+.chip-tag {
+	--border-color: linear-gradient(-45deg, #f85231, #61159f, #1dc2e8);
+	--border-width: 0.125em;
+	--curve-size: 12px;
+	--blur: 30px;
+	--bg: #171717;
+	--color: #ffffff;
+	color: var(--color);
+	cursor: default;
+	/* use position: relative; so that BG is only for .chip-tag */
+	position: relative;
+	isolation: isolate;
+	display: inline-grid;
+	place-content: center;
+	padding: 8px 26px;
+	font-size: 15px;
+	border: 0;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+	clip-path: polygon(
+	100% calc(100% - var(--curve-size)),
+	/* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+	/* bottom-right 2 */ 0 100%
+	/* Top-left */ 0% var(--curve-size),
+	var(--curve-size) 0,
+	/* top-right */ 100% 0,
+
+	);
+	transition: color 250ms;
+	width: auto;
+}
+
+.chip-tag::after,
+.chip-tag::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
+.chip-tag::before {
+	background: var(--border-color);
+	background-size: 300% 300%;
+	animation: move-chip-bg 5s ease infinite;
+	z-index: -2;
+}
+
+@keyframes move-chip-bg {
+	0% {
+		background-position: 31% 0%;
+	}
+
+	25% {
+		background-position: 0% 35%;
+	}
+
+	50% {
+		background-position: 70% 100%;
+	}
+
+	75% {
+		background-position: 35% 0%;
+	}
+
+	100% {
+		background-position: 31% 0%;
+	}
+}
+
+.chip-tag::after {
+	background: var(--bg);
+	z-index: -1;
+	clip-path: polygon(
+	/* Top-left */ var(--border-width)
+		calc(var(--curve-size) + var(--border-width) * 0.5),
+	calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+	/* top-right */ calc(100% - var(--border-width)) var(--border-width),
+	calc(100% - var(--border-width))
+		calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+	/* bottom-right 1 */
+		calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+		calc(100% - var(--border-width)),
+	/* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+	);
+	transition: clip-path 500ms;
+}
+
+
+.btn_back {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	vertical-align: middle;
+	text-decoration: none;
+	background: transparent;
+	font-size: 18px;
+	border: none;
+	text-shadow: 0px 0px 5px rgba(102,252,209,0.4);
+}
+
+.btn_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.btn_back {
+	position: relative;
+	height: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 140px;
+	height: 40px;
+	text-align: right;
+	text-transform: uppercase;
+	text-indent: -30px;
+	transition: 300ms;
+	font-weight: 700;
+}
+
+.btn_back::before {
+	content: "";
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: absolute;
+	right: 0;
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: linear-gradient(90deg, rgb(44, 82, 96) 0%, rgba(36,54,64,1) 100%);
+	border-radius: 20px;
+	z-index: -1;
+}
+
+.btn_back::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	transform: translate(-50%, -50%) rotate(225deg);
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid #66FCD1;
+	border-right: 2px solid #66FCD1;
+	transition: 400ms;
+}
+
+.btn_back:hover {
+	text-indent: 30px;
+	color: white;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: white
+}
+
+.btn_back:active {
+	scale: 0.95;
+}
+
+.btn_back:hover::before {
+	width: 80%;
+}
+
+.btn_back:hover::after {
+	right: calc(100% - 60px);
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+
+
 
 </style>

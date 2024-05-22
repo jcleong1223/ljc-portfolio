@@ -309,7 +309,7 @@
 											<div class="customized_card2">
 												<v-img
 													max-height="200"
-													src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+													:src=project.image.file_url
 													:aspect-ratio="1.22"
 													eager
 													cover
@@ -396,7 +396,7 @@ export default {
 			BaseClient.getPortfolioProjectHomePage().then((res) => {
 				const result = res.data.data;
 				this.projects = result.projects;
-
+console.log(this.projects);
 			}).catch((err) => {
 				this.errorHandler_(err);
 			});
@@ -438,6 +438,7 @@ export default {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
 
 
 </style>
