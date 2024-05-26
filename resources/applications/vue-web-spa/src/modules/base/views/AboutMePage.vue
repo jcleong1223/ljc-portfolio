@@ -412,7 +412,7 @@
 					activator="parent"
 					:width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'"
 				>
-					<v-card color="black">
+					<v-card color="rgba(22,44,52,1)">
 						<v-card-text class="white--text pt-5 font-family-libre-baskerville">
 							<v-row>
 								<v-col col="10" class="py-1 pl-6 align-self-center">

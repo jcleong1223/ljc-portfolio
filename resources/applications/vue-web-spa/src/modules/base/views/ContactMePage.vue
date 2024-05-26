@@ -106,14 +106,55 @@
 						cols="12"
 						style="background-color:transparent"
 					>
-						<div id="card" class="card-effect ml-n10">
-							<div class="content">
-								<div class="d-block">
-									<img src="/images/contactus/contactme.jpg" width="100%" class="text-center mb-10 rounded-xl" />
-									<h2 class="font-poppins font-weight-medium ">Full Stack Developer </h2>
-									<span>
-										I am available for freelance work. Contact with me now !!<br>Email: leongjc1223@gmail.com<br>Phone: leongjc1223@gmail.com
-									</span>
+						<div 
+							id="card" 
+							class="card-effect ml-n10"
+						>
+							<div 
+								class="content"
+							>
+								<div 
+									class="d-block" 
+									style="align-self: baseline; z-index: 1;"
+								>
+									<img 
+										src="/images/contactus/contactme.jpg" 
+										alt="Contact image" 
+										width="100%" 
+										class="text-center mb-5 rounded-xl" 
+									/>
+
+									<v-row>
+										<v-col
+											cols="10"
+											md="10"
+											sm="10"
+										>
+											<h2 
+												class="font-poppins font-weight-medium "
+											>
+												Full Stack Developer 
+											</h2>
+											<hr class="mt-1 mb-4" />
+											<span>
+												I'm available for freelance work. Feel free to contact me at<br>Email: <a href="mailto:leongjc1223@gmail.com" style="" class="customize-text-colour">leongjc1223@gmail.com</a><br>Phone: <a class="customize-text-colour" href="https://wa.me/+60169016343" target="_blank">+60169016343</a>
+											</span>
+										</v-col>
+										<v-col
+											cols="2"
+											md="2"
+											sm="2"
+											class="ma-auto"
+										>
+											<div
+												class="text-h3 d-block text-center "
+											>
+												<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
+												<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
+												<a href="https://github.com/jcleong1223?tab=repositories" class="white--text" target="_blank"><span class="mdi mdi-github"></span></a>
+											</div>
+										</v-col>
+									</v-row>
 								</div>
 							</div>
 						</div>
@@ -151,9 +192,8 @@ export default {
 		},
 
 		offLight(){
-			console.log('dd');
 			this.$el.querySelector(".title-style").style.animation = "none";
-		}
+		},
 	},
 };
 </script>
@@ -403,5 +443,13 @@ button:hover .right {
 /* Submit button effect */
 
 
+.customize-text-colour {
+	background: -webkit-linear-gradient(rgb(56, 255, 199), rgb(255, 201, 64));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 900; 
+	text-decoration: none;
+	font-size: 17px;
+}
 
 </style>

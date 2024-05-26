@@ -69,15 +69,14 @@
 					</v-list-item>
 				</template>
 			</v-list>
-
-			<div class="ml-4 mt-3 ">
-				<button class="letter-animation floating">
-					<div class="LETTER">
-						<span class="special_text">Resume <span class="mdi mdi-download pl-1"></span></span>
-					</div>
-				</button>
-			</div>
 		</template>
+		<div class="ml-4 mt-3 ">
+			<button class="letter-animation floating">
+				<div class="LETTER">
+					<span class="special_text">Resume <span class="mdi mdi-download pl-1"></span></span>
+				</div>
+			</button>
+		</div>
 	</div>
 </template>
 

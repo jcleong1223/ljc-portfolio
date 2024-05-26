@@ -34,9 +34,7 @@ class HomeController extends Controller
 		$projects = PortfolioProject::where('status', 1)
 					->with([
 						'image',
-						'tags' => function ($query) {
-							$query->limit(3);
-						},
+						'tags'
 						// 'mediaContents.content',
 					])
 					->orderBy('created_at', 'desc')

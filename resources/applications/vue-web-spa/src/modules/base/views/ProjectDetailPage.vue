@@ -11,13 +11,12 @@
 			<section class="mt-16 pb-2 pt-0 pr-15">
 				<v-container>
 					<v-row :class="$vuetify.breakpoint.smAndDown ? 'pl-8' :'justify-space-between'">
-						<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10" style="color: #66FCD1;">
+						<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10 black--text">
 							<router-link :to="{ name: 'home-page' }" class="text-color-unset">
-								<span class="font-family-inter font-size-subtitle">
-									<div class="btn_container">
-										<button class="btn_back">Back</button>
-									</div>
-								</span>
+								<button class="btn_back">
+									<div class="sign"><span class="mdi mdi-chevron-left"></span></div>
+									<div class="hover_text">Back</div>
+								</button>
 							</router-link>
 						</div>
 						<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'">{{ project.title }}</div>
@@ -27,7 +26,7 @@
 
 			<section :class="$vuetify.breakpoint.smAndDown ? 'pa-0' : 'mb-5 pl-8 pr-15'">
 				<v-container class="pa-0">
-						<div :class="$vuetify.breakpoint.smAndDown ? '' : 'my-8 text-md-h5'" no-gutter>
+					<div :class="$vuetify.breakpoint.smAndDown ? '' : 'my-8 text-md-h5'" no-gutter>
 						<!-- <custom-carousel-with-thumbnail
 							:length="mediaContent.length"
 							:show-arrows="$vuetify.breakpoint.mdAndUp"
@@ -143,6 +142,8 @@
 									<a 
 										class="chip-tag d-flex ma-2 px-5 py-0 font-family-primary"
 										style="cursor: pointer; text-decoration: none; color: white;"
+										:href="`http://${project.website_url}`"
+										target="_blank"
 									>
 										<v-icon
 											left
@@ -151,7 +152,7 @@
 										>
 											mdi-web
 										</v-icon>
-										{{ project.website_url }}
+										{{ project.website_url }} <span class="ml-3 mdi mdi-open-in-new"></span>
 									</a>
 								</div>
 							</v-row>
@@ -228,15 +229,15 @@ export default {
 				const result = res.data.data
 				this.project = result.project
 				this.tags = result.project.tags
-				const tagStyle = [
-                    "background-color: pink; ",
+				// const tagStyle = [
+				//     "background-color: pink; ",
 
-                ];
+				// ];
 
-				this.tags = result.project.tags.map((tag, index) => ({
-					...tag,
-					style: tagStyle[index % tagStyle.length]
-				}))
+				// this.tags = result.project.tags.map((tag, index) => ({
+				// 	...tag,
+				// 	style: tagStyle[index % tagStyle.length]
+				// }))
 
 				console.log(this.tags);
 
@@ -255,7 +256,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .back_effect:hover
 {
@@ -355,92 +356,72 @@ export default {
 	transition: clip-path 500ms;
 }
 
-
 .btn_back {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-	outline: none;
-	vertical-align: middle;
-	text-decoration: none;
-	background: transparent;
-	font-size: 18px;
+	--black: #000000;
+	--light_green_blue: #66FCD1;
+	--white: #ffffff;
+	--af-white: #f3f3f3;
+	--ch-white: #e1e1e1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 45px;
+	height: 45px;
 	border: none;
-	text-shadow: 0px 0px 5px rgba(102,252,209,0.4);
-}
-
-.btn_container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
-}
-
-.btn_back {
+	border-radius: 12px;
+	cursor: pointer;
 	position: relative;
-	height: fit-content;
+	overflow: hidden;
+	transition-duration: .3s;
+	box-shadow: 0px 0px 12px rgba(68, 255, 233, 0.75);
+	background-color: var(--light_green_blue);
+}
+
+.sign {
+	font-size: 35px;
+	width: 100%;
+	transition-duration: .3s;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	width: 140px;
-	height: 40px;
-	text-align: right;
-	text-transform: uppercase;
-	text-indent: -30px;
-	transition: 300ms;
-	font-weight: 700;
+	justify-content: center;
 }
 
-.btn_back::before {
-	content: "";
-	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+.hover_text {
 	position: absolute;
-	right: 0;
-	display: block;
-	width: 40px;
-	height: 40px;
-	background: linear-gradient(90deg, rgb(44, 82, 96) 0%, rgba(36,54,64,1) 100%);
-	border-radius: 20px;
-	z-index: -1;
-}
-
-.btn_back::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: 30px;
-	transform: translate(-50%, -50%) rotate(225deg);
-	width: 12px;
-	height: 12px;
-	border-top: 2px solid #66FCD1;
-	border-right: 2px solid #66FCD1;
-	transition: 400ms;
+	right: 0%;
+	width: 0%;
+	opacity: 0;
+	color: var(--af-white);
+	font-size: 17px;
+	font-weight: 900;
+	transition-duration: .3s;
+	line-height: 15px;
+	color: black
 }
 
 .btn_back:hover {
-	text-indent: 30px;
-	color: white;
-	font-weight: 600;
-	text-decoration: underline;
-	text-decoration-color: white
+	width: 100px;
+	border-radius: 12px;
+	transition-duration: .3s;
+}
+
+.btn_back:hover .sign {
+	width: 30%;
+	transition-duration: .3s;
+	padding-left: 7px;
+
+}
+
+.btn_back:hover .hover_text {
+	opacity: 1;
+	width: 70%;
+	transition-duration: .3s;
+	padding-right: 10px;
 }
 
 .btn_back:active {
-	scale: 0.95;
+	transform: translate(2px ,2px);
 }
-
-.btn_back:hover::before {
-	width: 80%;
-}
-
-.btn_back:hover::after {
-	right: calc(100% - 60px);
-	border-top: 2px solid #fff;
-	border-right: 2px solid #fff;
-}
-
-
 
 
 </style>
