@@ -4,12 +4,12 @@
 		class="fill-height"
 	>
 		<v-sheet
-			:height="$vuetify.breakpoint.mdAndUp ? '500' : '650'"
+			:height="$vuetify.breakpoint.mdAndUp ? '500' : '150'"
 			color="transparent"
-			class="ml-md-10 mt-15"
+			:class="$vuetify.breakpoint.mdAndUp ? 'ml-md-10 mt-15' : 'ml-md-10 mt-0 text-center '"
 		>
 			<span
-				class="font-poppins text-h3 pl-md-0 title-style"
+				:class="$vuetify.breakpoint.mdAndUp ? 'font-poppins text-h3 pl-0 title-style' : 'font-poppins text-h3 title-style'"
 			>
 				<b>Contact with me now !!</b>
 			</span>
@@ -23,7 +23,7 @@
 				class="justify-center px-0 mt-5"
 			>
 				<v-row
-					class="fill-width mx-auto my-10"
+					:class="$vuetify.breakpoint.mdAndUp ? 'fill-width mx-auto my-10' : 'fill-width mx-auto my-5'"
 					justify-md="start"
 					justify="center"
 				>
@@ -107,8 +107,8 @@
 						style="background-color:transparent"
 					>
 						<div 
-							id="card" 
-							class="card-effect ml-n10"
+							id="card"
+							:class="$vuetify.breakpoint.mdAndUp ? 'card-effect ml-n10' : 'card-effect'"
 						>
 							<div 
 								class="content"
@@ -124,7 +124,9 @@
 										class="text-center mb-5 rounded-xl" 
 									/>
 
-									<v-row>
+									<v-row
+										:class="$vuetify.breakpoint.mdAndUp ? '' : 'text-left'"
+									>
 										<v-col
 											cols="10"
 											md="10"

@@ -8,12 +8,16 @@
 			color="transparent"
 			class="ml-md-10 mt-15"
 		>
-			<span
-				class="font-poppins text-h3 pl-md-0 customize-text-color"
-				style="text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
+			<div
+				:class="$vuetify.breakpoint.mdAndUp ? '' : 'ml-8'"
 			>
-				<b>The projects that I'm proud of</b>
-			</span>
+				<span
+					class="font-poppins text-h3 pl-md-0 customize-text-color"
+					style="text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
+				>
+					<b>The projects that I'm proud of</b>
+				</span>
+			</div>
 			<!-- </v-row> -->
 			<v-container
 				class="justify-center px-0 mt-5"
@@ -42,6 +46,7 @@
 										:key="i"
 										class="my-md-8 my-4"
 										cols="12"
+										sm="6"
 										md="4"
 									>
 										<v-card

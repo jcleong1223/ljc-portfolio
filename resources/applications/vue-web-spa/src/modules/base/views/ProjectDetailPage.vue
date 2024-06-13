@@ -8,7 +8,7 @@
 			color="transparent"
 			class="ml-md-10 mt-0"
 		>
-			<section class="mt-16 pb-2 pt-0 pr-15">
+			<section class="mt-10 pb-2 pt-0 pr-15">
 				<v-container>
 					<v-row :class="$vuetify.breakpoint.smAndDown ? 'pl-8' :'justify-space-between'">
 						<div v-if="$vuetify.breakpoint.mdAndUp" class="align-self-center text-decoration-underline back_effect mr-10 black--text">
@@ -26,7 +26,7 @@
 
 			<section :class="$vuetify.breakpoint.smAndDown ? 'pa-0' : 'mb-5 pl-8 pr-15'">
 				<v-container class="pa-0">
-					<div :class="$vuetify.breakpoint.smAndDown ? '' : 'my-8 text-md-h5'" no-gutter>
+					<div :class="$vuetify.breakpoint.smAndDown ? '' : 'my-4 text-md-h5'" no-gutter>
 						<!-- <custom-carousel-with-thumbnail
 							:length="mediaContent.length"
 							:show-arrows="$vuetify.breakpoint.mdAndUp"
@@ -58,8 +58,8 @@
 							:touchable="false"
 							fade
 							:autoplay="false"
-							:bullets="false"
-							fixed-height="400px"
+							:bullets="true"
+							fixed-height="550px"
 							@slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
 						>
 							<vueper-slide
@@ -93,7 +93,7 @@
 				</v-container>
 			</section>
 
-			<section class="mb-10 pa-md-0 px-8">
+			<section class="mt-n10 mb-10 pa-md-0 px-8">
 				<v-container>
 					<v-row>
 						<v-col
@@ -245,6 +245,7 @@ export default {
 					result.project.image,
 					...result.project.media_contents.map((item) => item.content)
 				];
+				console.log(this.galleries);
 				this.loading = true;
 			}).catch((err) => {
 				this.errorHandler_(err);

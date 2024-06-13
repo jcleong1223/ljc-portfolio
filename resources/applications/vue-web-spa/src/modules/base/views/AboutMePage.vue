@@ -4,12 +4,13 @@
 		class="fill-height"
 	>
 		<v-sheet
-			:height="$vuetify.breakpoint.mdAndUp ? '500' : '650'"
+			:height="$vuetify.breakpoint.mdAndUp ? '500' : '150'"
 			color="transparent"
-			class="ml-md-10 mt-15"
+			:class="$vuetify.breakpoint.mdAndUp ? 'ml-md-10 mt-15' : 'ml-md-10 mt-0'"
 		>
 			<v-container
-				class="justify-center px-0 mt-5 mb-15"
+				class=""
+				:class="$vuetify.breakpoint.mdAndUp ? 'justify-center px-0 mt-5 mb-15' : 'justify-center px-0 mt-0 mb-15' "
 			>
 				<v-row
 					class="fill-width mx-auto"
@@ -17,29 +18,39 @@
 					justify="center"
 				>
 					<v-col
-						md="5"
+						lg="5"
+						md="6"
+						sm="6"
 						cols="12"
 						style="background-color:transparent;text-align: -webkit-center;"
+						:class="$vuetify.breakpoint.mdAndUp ? '' : 'order-2'"
 					>
 						<div id="card" class="polaroid-card">
 							<div class="content">
 								<div class="d-block">
-									<img src="/images/profileimg_placeholder.png" width="100%" class="text-center mb-10 rounded-md" />
+									<img 
+										src="/images/profileimg_placeholder.png" 
+										class="text-center mb-10 rounded-md" 
+										:style="$vuetify.breakpoint.mdAndUp ? 'width: 100%': 'width: 100%'" />
 									<h2 class="font-poppins font-weight-medium black--text">Full Stack Developer </h2>
 								</div>
 							</div>
 						</div>
 					</v-col>
 					<v-col
-						md="7"
+						lg="7"
+						md="6"
+						sm="6"
 						cols="12"
 						style="background-color:transparent"
+						:class="$vuetify.breakpoint.mdAndUp ? '' : 'order-1'"
 					>
 						<div
 							class="d-block"
 						>
 							<span
-								class="font-poppins text-h3 pl-md-0 title-style"
+								class="font-poppins text-h3 pl-md-0 customize-text-color"
+								style="text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
 							>
 								<b>Hello, I'm Kevin Leong </b>
 							</span>
@@ -66,7 +77,7 @@
 
 
 			<v-container
-				class="justify-center px-0 pl-7"
+				:class="$vuetify.breakpoint.mdAndUp ? 'justify-center pl-7' : 'justify-center px-0'"
 			>
 				<div
 					class="mb-10"
@@ -78,197 +89,24 @@
 					</span>
 				</div>
 				<v-row
-					class="fill-width mx-auto mb-8"
+					:class="$vuetify.breakpoint.mdAndUp ? 'fill-width mx-auto mb-8' : 'fill-width mx-auto'"
 					justify-md="start"
 					justify="center"
 				>
 					<v-col
-						md="2"
-						cols="12"
+						v-for="(mySkill, k) in mySkills"
+						:key="k" 
+						lg="2"
+						md="4"
+						sm="4"
+						cols="6"
 						style="background-color:transparent;text-align: -webkit-center;"
 					>
 						<div class="card-container">
 							<div class="card">
 								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center" />
-									<p>HTML</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center" />
-									<p>CSS</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/javascript.png" width="50%" class="text-center" />
-									<p>Javascript</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center" />
-									<p>CSS</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center" />
-									<p>HTML</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-				</v-row>
-				<v-row
-					class="fill-width mx-auto"
-					justify-md="start"
-					justify="center"
-				>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center" />
-									<p>HTML</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center" />
-									<p>CSS</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/javascript.png" width="50%" class="text-center" />
-									<p>Javascript</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/css.png" width="50%" class="text-center" />
-									<p>CSS</p>
-								</div>
-								<div class="content">
-									<p class="heading">
-										<!-- For another hovering effect -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</v-col>
-					<v-col
-						md="2"
-						cols="12"
-						style="background-color:transparent;text-align: -webkit-center;"
-					>
-						<div class="card-container">
-							<div class="card">
-								<div class="front-content d-block align-self-center pt-6">
-									<img src="/images/html.png" width="50%" class="text-center" />
-									<p>HTML </p>
+									<img :src="mySkill.icon" width="41%" class="text-center pb-3" />
+									<p>{{ mySkill.title }}</p>
 								</div>
 								<div class="content">
 									<p class="heading">
@@ -292,6 +130,7 @@
 						md="5"
 						cols="12"
 						style="background-color:transparent;"
+						:class="$vuetify.breakpoint.mdAndUp ? '' : 'pa-0 ml-n10'"
 					>
 						<div class="list">
 							<ul>
@@ -306,6 +145,7 @@
 						md="5"
 						cols="12"
 						style="background-color:transparent;"
+						:class="$vuetify.breakpoint.mdAndUp ? '' : 'pa-0 ml-n10'"
 					>
 						<div class="list">
 							<ul>
@@ -447,6 +287,7 @@ export default {
 			certificates: [],
 			certModal: false,
 			current_cert: '',
+			mySkills: [],
 			// currencyFormat: '',
 		};
 	},
@@ -456,6 +297,7 @@ export default {
 	created() {
 		//
 		this.fetchCertData();
+		this.fetchSkills();
 	},
 	beforeUpdate() {
 		this.$nextTick(() => {
@@ -484,7 +326,15 @@ export default {
 			BaseClient.getCertificatesPage().then((res) => {
 				const result = res.data.data
 				this.certificates = result.certificates;
-				console.log(this.certificates);
+			}).catch((err) => {
+				this.errorHandler_(err);
+			});
+		},
+		fetchSkills(){
+			BaseClient.getTagData().then((res) => {
+				const response = res.data.data
+				this.mySkills = response.my_skills
+				console.log(this.mySkills);
 			}).catch((err) => {
 				this.errorHandler_(err);
 			});
@@ -494,7 +344,7 @@ export default {
 			this.current_cert = cert;
 		}
 	},
-};1
+};
 </script>
 
 <style>
@@ -523,7 +373,6 @@ export default {
 }
 
 .polaroid-card {
-
 	width: 70%;
 	height: 96%;
 	background: #ffffff;
@@ -556,136 +405,149 @@ export default {
 
 
 .card-container {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  /* border: #f89b29 solid 1px; */
+	width: 150px;
+	height: 150px;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	/* border: #f89b29 solid 1px; */
 }
 
 .card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
 }
 
 .card .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
 }
 
 .card .front-content p {
-  font-size: 20px;
-  font-weight: 700;
-  opacity: 1;
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+	font-size: 20px;
+	font-weight: 700;
+	opacity: 1;
+	background: linear-gradient(-270deg, #53ffce 0%, #ff519f 100% );
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
 }
 
 .card .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateY(-96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 10px;
+	background: linear-gradient(-45deg, #39ffc7 0%, #ff0f7b 100% );
+	color: #e8e8e8;
+	padding: 20px;
+	line-height: 1.5;
+	border-radius: 5px;
+	pointer-events: none;
+	transform: translateY(-96%);
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
+	font-size: 32px;
+	font-weight: 700;
 }
 
 .card-container:hover {
-	box-shadow: 0 0 20px rgba(255, 212, 58, 0.8);
-  border-color: #f3bf25;
+	box-shadow: 0 0 20px rgba(150, 250, 255, 0.8);
+	border-color: #88dbff;
 }
-
-
-
-
-
-
-
-
-
 
 
 .list {
-  position: relative;
+	position: relative;
+}
 
-}
 .list ul {
-  position: relative;
+	position: relative;
 }
+
 .list ul li {
-  position: relative;
-  left: 0;
-  color: #fce4ec;
-  list-style: none;
-  margin: 20px 0;
-  padding: 8px 0;
-  border-left: 2px solid #1cd18b;
-  transition: 0.5s;
-border-radius: 10px;
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-overflow: hidden;
+	position: relative;
+	left: 0;
+	color: #fce4ec;
+	list-style: none;
+	margin: 20px 0;
+	padding: 8px 0;
+	border-left: 2px solid #1cd18b;
+	transition: 0.5s;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
 }
+
 .list ul li:hover {
-  left: 10px;
+	left: 10px;
 }
+
 .list ul li span {
 	font-size: 18px;
-  position: relative;
-  padding: 8px;
-  padding-left: 10px;
-  display: inline-block;
-  z-index: 1;
-  transition: 0.5s;
+	position: relative;
+	padding: 8px;
+	padding-left: 10px;
+	display: inline-block;
+	z-index: 1;
+	transition: 0.5s;
 }
+
 .list ul li:hover span {
-  color: #111;
+	color: #111;
 }
+
 .list ul li:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #1cd18b;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.5s;
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #1cd18b;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: 0.5s;
 }
+
 .list ul li:hover:before {
-  transform: scaleX(1);
+	transform: scaleX(1);
 }
 
+.customize-text-color {
+	background: -webkit-linear-gradient(rgb(102, 252, 209), rgb(102, 147, 252));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
+@media only screen and (max-width: 940px) {
+	.vueperslides__parallax-wrapper {
+		padding-bottom: 70% !important; 
+	}
 
-
-
+	.vueperslides__bullets {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		bottom: -25%;
+		left: 0;
+		right: 0;
+	}
+}
 
 </style>
