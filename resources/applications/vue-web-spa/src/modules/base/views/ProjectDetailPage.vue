@@ -4,7 +4,7 @@
 		class="fill-height"
 	>
 		<v-sheet
-			:height="$vuetify.breakpoint.mdAndUp ? '500' : '650'"
+			:height="$vuetify.breakpoint.mdAndUp ? '500' : '2050'"
 			color="transparent"
 			class="ml-md-10 mt-0"
 		>
@@ -19,7 +19,12 @@
 								</button>
 							</router-link>
 						</div>
-						<div :class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'">{{ project.title }}</div>
+						<div 
+							:class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'"
+							style="line-height: 50px !important;"
+						>
+							{{ project.title }}
+						</div>
 					</v-row>
 				</v-container>
 			</section>
