@@ -18,7 +18,7 @@ class SendEmailRequest extends FormRequest
             "name" => ["required", "string"],
             "email" => ["required", "email"],
             "phone" => ["required", 'regex:/^[0-9+\-]+$/'],
-            "subject" => ["required", "string"],
+            // "subject" => ["required", "string"],
             // "phone_prefix" => ["nullable", "string"],
             "message" => ["required", "string"],
         ];

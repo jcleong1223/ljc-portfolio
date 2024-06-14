@@ -13,11 +13,11 @@
 			>
 				<b>Contact with me now !!</b>
 			</span>
-			<input 
-				class="togglesw" 
+			<!-- <input
+				class="togglesw"
 				type="checkbox"
 				@click="offLight"
-			>
+			> -->
 			<!-- </v-row> -->
 			<v-container
 				class="justify-center px-0 mt-5"
@@ -45,49 +45,58 @@
 									>
 										<v-row class="pt-2 ma-0 white--text">
 											<v-col class="pb-0" cols="6">
-												Your Name
+												Your Name <strong class="customize-text-colour">*</strong>
 											</v-col>
 											<v-col class="pb-0" cols="6">
-												Phone Number
+												Phone Number <strong class="customize-text-colour">*</strong>
 											</v-col>
 											<v-col class="py-1" cols="6">
 												<input
+													v-model="contactForm.name"
 													type="text"
 													name="name"
 													class="input-style"
 													placeholder="Name"
 													autocomplete="off"
+													:error-messages="errors.name"
 												>
 											</v-col>
 											<v-col class="py-1" cols="6">
 												<input
+													v-model="contactForm.phone"
 													type="text"
 													name="phone_number"
 													class="input-style"
 													placeholder="Phone Number"
 													autocomplete="off"
+													:error-messages="errors.phone"
 												>
 											</v-col>
-											<v-col class="pb-0" cols="12">Email</v-col>
+											<v-col class="pb-0" cols="12">Email <strong class="customize-text-colour">*</strong></v-col>
 											<v-col class="py-1" cols="12">
 												<input
+													v-model="contactForm.email"
 													type="email"
 													name="email"
 													class="input-style"
 													placeholder="Email"
 													autocomplete="off"
+													:error-messages="errors.email"
 												>
 											</v-col>
-											<v-col class="pb-0" cols="12">Message</v-col>
+											<v-col class="pb-0" cols="12">Message <strong class="customize-text-colour">*</strong></v-col>
 											<v-col class="pt-1" cols="12">
 												<textarea
+													v-model="contactForm.message"
 													name="message"
 													class="input-style"
 													placeholder="Leave Leong a message"
+													:error-messages="errors.message"
 												></textarea>
 											</v-col>
-											<button 
+											<button
 												class="ml-4"
+												@click="submitForm(contactForm)"
 											>
 												<span>Send</span>
 												<div class="top"></div>
@@ -106,22 +115,22 @@
 						cols="12"
 						style="background-color:transparent"
 					>
-						<div 
+						<div
 							id="card"
 							:class="$vuetify.breakpoint.mdAndUp ? 'card-effect ml-n10' : 'card-effect'"
 						>
-							<div 
+							<div
 								class="content"
 							>
-								<div 
-									class="d-block" 
+								<div
+									class="d-block"
 									style="align-self: baseline; z-index: 1;"
 								>
-									<img 
-										src="/images/contactus/contactme.jpg" 
-										alt="Contact image" 
-										width="100%" 
-										class="text-center mb-5 rounded-xl" 
+									<img
+										src="/images/contactus/contactme.jpg"
+										alt="Contact image"
+										width="100%"
+										class="text-center mb-5 rounded-xl"
 									/>
 
 									<v-row
@@ -132,10 +141,10 @@
 											md="10"
 											sm="10"
 										>
-											<h2 
+											<h2
 												class="font-poppins font-weight-medium "
 											>
-												Full Stack Developer 
+												Full Stack Developer
 											</h2>
 											<hr class="mt-1 mb-4" />
 											<span>
@@ -168,13 +177,22 @@
 </template>
 
 <script>
+import { errorHandlerMixin } from "@src/mixins/ErrorHandlerMixin";
+import BaseClient from '../client';
 
 export default {
 	components: {},
+	mixins: [
+		errorHandlerMixin,
+	],
 
 	data() {
 		return {
-
+			contactForm: {
+				// recaptcha: '',
+			},
+			errors: {},
+			loading: false,
 			// currencyFormat: '',
 		};
 	},
@@ -191,6 +209,32 @@ export default {
 			// this.form.recaptcha = token
 
 			this.submitContactInfo(item);
+		},
+
+		submitContactInfo(item){
+			let payload = item
+			this.loading = true;
+			this.errors = {};
+
+			BaseClient.submitContactMe(payload).then((res) => {
+				this.$toast.success("Successfully submitted")
+				this.loading = false;
+				this.contactForm.name = ''
+				this.contactForm.email = ''
+				this.contactForm.phone = ''
+				this.contactForm.message = ''
+			}).catch((err) => {
+				this.$toast.error("Kindly fill up the required field")
+				this.errors = this.errorHandler_(err, [
+					'name',
+					'email',
+					'message',
+					'phone',
+
+				])
+			}).finally(()=>{
+				this.loading = false;
+			})
 		},
 
 		offLight(){
@@ -392,7 +436,7 @@ button:before {
 	transition-delay: 500ms;
 	background-color: transparent;
 	box-shadow: 0 0 10px rgb(53, 244, 174),
-	0 0 30px rgb(53, 244, 174), 
+	0 0 30px rgb(53, 244, 174),
 	0 0 50px rgb(53, 244, 174);
 }
 
@@ -433,7 +477,7 @@ button .right {
 }
 
 
-button:hover .top, 
+button:hover .top,
 button:hover .bottom {
 	width: 100%;
 }
@@ -449,7 +493,7 @@ button:hover .right {
 	background: -webkit-linear-gradient(rgb(56, 255, 199), rgb(255, 201, 64));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-weight: 900; 
+	font-weight: 900;
 	text-decoration: none;
 	font-size: 17px;
 }

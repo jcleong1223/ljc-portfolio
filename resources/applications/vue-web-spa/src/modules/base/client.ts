@@ -47,6 +47,13 @@ const BaseClient = {
 	getCertificatesPage(payload){
 		return axios.get( prefix + "/certificates", { params:payload })
 	},
+	getTagData(payload){
+		return axios.get(prefix + "/my-skill-tags", { params:payload } )
+	},
+
+	submitContactMe(payload){
+		return axios.post( prefix + "/contact-us", payload)
+	}
 
 }
 

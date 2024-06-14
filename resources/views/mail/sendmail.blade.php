@@ -11,7 +11,6 @@
     <p>Name: {{ $data['name']  }}</p>
     <p>Email: {{ $data['email']  }}</p>
     <p>Phone Number: {{ $data['phone_num'] }}</p>
-    <p>Subject: {{ $data['subject'] }}</p>
     <p>Message: {{ $data['message']  }}</p>
     <p>Thank You</p>
     <p>Regards,</p>
