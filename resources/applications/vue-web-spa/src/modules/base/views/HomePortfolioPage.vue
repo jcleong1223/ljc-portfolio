@@ -4,9 +4,9 @@
 		class="fill-height"
 	>
 		<v-sheet
-			:height="$vuetify.breakpoint.mdAndUp ? '500' : '650'"
+			:height="$vuetify.breakpoint.mdAndUp ? '500' : '150'"
 			color="transparent"
-			class="ml-md-10 mt-15"
+			:class="$vuetify.breakpoint.mdAndUp ? 'ml-md-10 mt-15' : 'ml-md-10 mt-0'"
 		>
 			<div
 				:class="$vuetify.breakpoint.mdAndUp ? '' : 'ml-8'"
@@ -67,7 +67,7 @@
 													style="border-radius: 20px;"
 												></v-img>
 												<v-card-title
-													class="white--text font-barlow pl-7 font-size-subtitle"
+													class="white--text font-ibm-plex pl-7 font-size-subtitle"
 												>
 													{{ project.title }}
 												</v-card-title>
@@ -108,7 +108,7 @@
 
 
 
-															<button class="Btn ma-0">
+															<button class="Btn ma-0" @click="scrollToTop">
 																<div class="sign"><span class="mdi mdi-chevron-right"></span></div>
 																<div class="text">Learn more</div>
 															</button>
@@ -165,6 +165,10 @@ export default {
 			const limit = 3;
 			return tags.slice(0, limit);
 		},
+
+		scrollToTop(){
+			window.scrollTo(0, 0);
+		}
 
 	},
 };

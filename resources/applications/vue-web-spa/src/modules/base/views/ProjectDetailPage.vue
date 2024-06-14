@@ -4,7 +4,7 @@
 		class="fill-height"
 	>
 		<v-sheet
-			:height="$vuetify.breakpoint.mdAndUp ? '500' : '2050'"
+			:height="$vuetify.breakpoint.mdAndUp ? '500' : '150'"
 			color="transparent"
 			class="ml-md-10 mt-0"
 		>
@@ -19,7 +19,7 @@
 								</button>
 							</router-link>
 						</div>
-						<div 
+						<div
 							:class="$vuetify.breakpoint.smAndDown ? 'mb-8 font-size-title font-weight-bold font-poppins' : 'mb-2 font-size-header font-poppins font-weight-bold'"
 							style="line-height: 50px !important;"
 						>
@@ -106,10 +106,20 @@
 							md="6"
 						>
 							<v-row class="justify-start">
-								<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Language/Technology Used</div>
+								<div 
+									class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0"
+								>
+									Language/Technology Used
+									<v-icon
+										left
+										class="py-2"
+									>
+										mdi-laptop
+									</v-icon>
+								</div>
 							</v-row>
 							<v-row v-if="tags.length > 0" class="justify-start">
-								<button 
+								<button
 									v-for="(tag, j) in tags"
 									:key="j"
 									class="chip-tag ma-2 font-family-primary"
@@ -123,10 +133,21 @@
 						</v-col>
 						<v-col
 							cols="12"
-							md="6"
+							md="4"
+							class="pl-md-16 pl-lg-16 pl-3"
 						>
 							<v-row class="justify-start">
-								<div class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0">Website URL</div>
+								<div
+									class="my-md-5 mt-8 mb-5 font-size-subtitle font-weight-bold text-left font-poppins mx-0"
+								>
+									Website URL
+									<v-icon
+										left
+										class="py-2"
+									>
+										mdi-web
+									</v-icon>
+								</div>
 							</v-row>
 							<v-row v-if="project.website_url" class="justify-start">
 								<div class="text-justify font-size-text mx-0">
@@ -144,19 +165,12 @@
 										</v-icon>
 										{{ project.website_url }} <span class="ml-3 mdi mdi-open-in-new"></span>
 									</v-chip> -->
-									<a 
+									<a
 										class="chip-tag d-flex ma-2 px-5 py-0 font-family-primary"
 										style="cursor: pointer; text-decoration: none; color: white;"
 										:href="`http://${project.website_url}`"
 										target="_blank"
 									>
-										<v-icon
-											left
-											color="#3d93ee"
-											class="py-2"
-										>
-											mdi-web
-										</v-icon>
 										{{ project.website_url }} <span class="ml-3 mdi mdi-open-in-new"></span>
 									</a>
 								</div>
@@ -167,6 +181,27 @@
 								</div>
 							</v-row>
 						</v-col>
+						<v-col
+							cols="12"
+							md="2"
+						>
+							<v-row class="justify-start">
+								<div
+									class="my-md-5 mt-8 mb-16 font-size-subtitle font-weight-bold text-left font-poppins mx-0"
+								>
+									Project Year
+									<v-icon
+										left
+										class="py-2"
+									>
+										mdi-calendar
+									</v-icon>
+								</div>
+							</v-row>
+							<div class="mt-5">
+								<span class="font-family-primary font-size-subtitle">{{ $dayjs(project.project_date).format("MMM YYYY") }}</span><br />
+							</div>
+						</v-col>
 					</v-row>
 				</v-container>
 			</section>
@@ -174,7 +209,17 @@
 			<section class="px-md-0 px-8 pb-15">
 				<v-container>
 					<v-row class="justify-start">
-						<div class="my-8 font-weight-bold text-left font-poppins font-size-subtitle mx-0 px-0">Description</div>
+						<div 
+							class="my-8 font-weight-bold text-left font-poppins font-size-subtitle mx-0 px-0"
+						>
+							Description
+							<v-icon
+								left
+								class="py-2"
+							>
+								mdi-text-box
+							</v-icon>
+						</div>
 					</v-row>
 					<!-- <div>Picture section</div> -->
 					<v-row class="justify-start">
@@ -244,13 +289,20 @@ export default {
 				// 	style: tagStyle[index % tagStyle.length]
 				// }))
 
-				console.log(this.tags);
-
 				this.galleries = [
 					result.project.image,
 					...result.project.media_contents.map((item) => item.content)
 				];
-				console.log(this.galleries);
+
+				// const formattedDate = dayjs(this.project_date, 'YYYY-MM');
+				// console.log(formattedDate);
+				// const monthTextNames = [
+				// 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+				// 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+				// ];
+				// const submittedMonth = monthTextNames[formattedDate.month()];
+				// const submittedYear = formattedDate.year();
+
 				this.loading = true;
 			}).catch((err) => {
 				this.errorHandler_(err);

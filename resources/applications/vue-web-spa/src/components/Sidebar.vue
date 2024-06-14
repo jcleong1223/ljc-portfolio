@@ -1,19 +1,10 @@
 <template>
 	<div>
 		<div class="mx-auto pl-4">
-			<v-avatar
-				size="75"
-			>
-				<img
-					src="/images/profileimg_placeholder.png"
-					alt="John"
-				>
-			</v-avatar>
-			<br>
-			<br>
 			<span
-				class="text-h5 text-center font-family-primary" 
-				style="line-height: 28px; white-space:inherit; color: #45a29e; text-shadow: 3px 1px 15px rgba(89,188,184,0.6); font-weight: 900;"
+				:class="$vuetify.breakpoint.lgAndUp ? 'text-h2 text-center font-family-primary' : 'text-h4 text-center font-family-primary'"
+				style="line-height: 28px; white-space:inherit; color: #45a29e; text-shadow: 3px 1px 15px rgba(89,188,184,0.6); font-weight: 900; cursor: pointer;"
+				@click="toMainPage"
 			>
 				Kevin Leong
 			</span>
@@ -26,6 +17,7 @@
 				flat
 				class="pt-16 mt-16"
 				style="background: transparent;"
+				@click="scrollToTop"
 			>
 				<v-subheader v-if="group.title!=null">
 					{{ group.title }}
@@ -70,12 +62,19 @@
 				</template>
 			</v-list>
 		</template>
-		<div class="ml-4 mt-3 ">
+		<div class="ml-4 mt-3 mb-16">
 			<button class="letter-animation floating">
 				<div class="LETTER">
-					<span class="special_text">Resume <span class="mdi mdi-download pl-1"></span></span>
+					<span class="special_text" @click="viewResume">Resume <span class="mdi mdi-download pl-1"></span></span>
 				</div>
 			</button>
+		</div>
+
+		<div
+			class="pt-8 text-caption text-center side_footer"
+			style="width: 100%; font-size: 0.6rem !important; margin-top: 30px;"
+		>
+			<span class="text-decoration-none opposite--text"><strong>{{ poweredBy.text }}</strong></span>
 		</div>
 	</div>
 </template>
@@ -86,7 +85,6 @@ export default {
 	data () {
 		return {
 			title : this.$config.name,
-			app_version : this.$config.version,
 			isOpen: true,
 			menu: false,
 			route_groups: [],
@@ -125,6 +123,18 @@ export default {
 				// etc...
 			});
 		},
+
+		viewResume(){
+			window.open("https://docs.google.com/document/d/1TVsBZ9qdODi-KotzZ-KWr-jFbjAR_YhL-Rt1WG4o5MY/edit?usp=sharing");
+		},
+
+		toMainPage(){
+			this.$router.push('/');
+		},
+
+		scrollToTop(){
+			window.scrollTo(0, 0);
+		}
 	}
 }
 </script>
@@ -133,7 +143,7 @@ export default {
 .letter-animation {
 	text-align: center;
 	background-color: #171717;
-	padding: 10px 25px;
+	padding: 10px 20px;
 	border: 3px solid transparent;
 	border-radius: 0.6em;	
 	transition: 0.2s;
@@ -231,6 +241,13 @@ export default {
     transform: translateY(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+.side_footer {
+	position: absolute;
+	right: 42%;
+	bottom: 0;
+	width: auto;
 }
 
 </style>

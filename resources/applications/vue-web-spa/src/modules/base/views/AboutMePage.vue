@@ -31,7 +31,8 @@
 									<img 
 										src="/images/profileimg_placeholder.png" 
 										class="text-center mb-10 rounded-md" 
-										:style="$vuetify.breakpoint.mdAndUp ? 'width: 100%': 'width: 100%'" />
+										:style="$vuetify.breakpoint.mdAndUp ? 'width: 100%': 'width: 100%'" 
+									/>
 									<h2 class="font-poppins font-weight-medium black--text">Full Stack Developer </h2>
 								</div>
 							</div>
