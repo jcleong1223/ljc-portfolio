@@ -29,7 +29,13 @@
 					<v-toolbar-title>
 						<v-row>
 							<v-col>
-								<span class="font-weight-bold" style="letter-spacing: 2px; font-size: large;">Kevin Leong</span>
+								<!-- <span class="font-weight-bold" style="letter-spacing: 2px; font-size: large;">Kevin Leong</span> -->
+								<img 
+									src="/images/ljc-logo-white.png" 
+									width="25%"
+									class="mt-2"
+									style="cursor: pointer;"
+								/>
 							</v-col>
 						</v-row>
 					</v-toolbar-title>

@@ -6,7 +6,7 @@
 		<v-sheet
 			:height="$vuetify.breakpoint.mdAndUp ? '500' : '150'"
 			color="transparent"
-			:class="$vuetify.breakpoint.mdAndUp ? 'ml-md-10 mt-15' : 'ml-md-10 mt-0 text-center '"
+			:class="$vuetify.breakpoint.mdAndUp ? 'ml-md-10 mt-5' : 'ml-md-10 mt-0 text-center '"
 		>
 			<span
 				:class="$vuetify.breakpoint.mdAndUp ? 'font-poppins text-h3 pl-0 title-style' : 'font-poppins text-h3 title-style'"
@@ -20,7 +20,7 @@
 			> -->
 			<!-- </v-row> -->
 			<v-container
-				class="justify-center px-0 mt-5"
+				class="justify-center px-0"
 			>
 				<v-row
 					:class="$vuetify.breakpoint.mdAndUp ? 'fill-width mx-auto my-10' : 'fill-width mx-auto my-5'"

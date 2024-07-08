@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\{
 	ContactUsController,
 	FabricationController,
 	HomeController,
+    TagController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::prefix('api')->middleware([])->group(function ()
 		Route::get('/fabrications', [FabricationController::class, 'home']);
 		Route::get('/fabrications/{page}', [FabricationController::class, 'getPaginateData']);
 		Route::get('/certificates', [CertificateController::class, 'home']);
+		Route::get('/my-skill-tags', [TagController::class, 'home']);
 	});
 });
 

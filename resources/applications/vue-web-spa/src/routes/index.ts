@@ -24,9 +24,9 @@ const routes : Array<RouteConfig> = [
 		{
 			path: '', component: SideBarBaseLayout, children: [
 				{ path: '/', name: 'home-page', component: BaseModule.HomePortfolioPage, meta: { auth: null, title: i18n.t("home-page.meta-title") } },
-				{ path: '/contact-leong', name: 'contact-me', component: BaseModule.ContactMePage, meta: { auth: null, title: i18n.t("contact-me-page.meta-title") } },
-				{ path: '/about-leong', name: 'about-me', component: BaseModule.AboutMePage, meta: { auth: null, title: i18n.t("about-me-page.meta-title") } },
-				{ path: '/project-detail/:id', name: 'project.detail', component: BaseModule.ProjectDetailPage, meta: {auth: null, title: i18n.t("project-detail-page.meta-title")}},
+				{ path: '/contact-leong', name: 'contact-me', component: BaseModule.ContactMePage, meta: { auth: null, title: "Contact Me" } },
+				{ path: '/about-leong', name: 'about-me', component: BaseModule.AboutMePage, meta: { auth: null, title: "About Me" } },
+				{ path: '/project-detail/:id', name: 'project.detail', component: BaseModule.ProjectDetailPage, meta: {auth: null, title: i18n.t("Project Detail")}},
 
 
 				{ path: '/about-us', name: 'about-us', component: BaseModule.AboutUsPage, meta: { auth: null, title: i18n.t("about-us-page.meta-title") } },

@@ -1,13 +1,20 @@
 <template>
 	<div>
 		<div class="mx-auto pl-4">
-			<span
+			<!-- <span
 				:class="$vuetify.breakpoint.lgAndUp ? 'text-h2 text-center font-family-primary' : 'text-h4 text-center font-family-primary'"
 				style="line-height: 28px; white-space:inherit; color: #45a29e; text-shadow: 3px 1px 15px rgba(89,188,184,0.6); font-weight: 900; cursor: pointer;"
 				@click="toMainPage"
 			>
 				Kevin Leong
-			</span>
+			</span> -->
+			<img 
+				src="/images/ljc-logo-white.png" 
+				width="65%"
+				class="mt-n5"
+				style="cursor: pointer;"
+				@click="toMainPage"
+			/>
 		</div>
 		<template v-for="(group,i) in route_groups">
 			<v-list

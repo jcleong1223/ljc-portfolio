@@ -29,7 +29,7 @@
 							<div class="content">
 								<div class="d-block">
 									<img 
-										src="/images/profileimg_placeholder.png" 
+										src="/images/self-image.jpeg" 
 										class="text-center mb-10 rounded-md" 
 										:style="$vuetify.breakpoint.mdAndUp ? 'width: 100%': 'width: 100%'" 
 									/>
@@ -53,14 +53,14 @@
 								class="font-poppins text-h3 pl-md-0 customize-text-color"
 								style="text-shadow: 3px 1px 12px rgba(60,228,233,0.6); font-weight: 900;"
 							>
-								<b>Hello, I'm Kevin Leong </b>
+								<b>Hello, I'm Jia Chong </b>
 							</span>
 							<span style="font-size: 30px;">&#128512;</span>
 							<br />
 							<div
-								class="mt-10 mr-10"
+								class="mt-10 mr-10 text-justify"
 							>
-								<span>If you have a peanut allergy, it's crucial to get tested by an allergist to determine if you have allergies to other nuts like almonds and walnuts. Skin prick tests or blood tests can help diagnose tree nut allergies</span>
+								<span>A motivated and enthusiastic Junior Full Stack Developer with expertise translating functional specifications and business requirements into software solutions. Competent in <span class="customize-text-color font-weight-bold">frontend & backend development and data architecture</span>. Possess practical working knowledge in software development with accomplished multiple records of software projects. Participates in the software development lifecycle including <span class="customize-text-color font-weight-bold">dnevelopment, modification, maintaining and testing </span>of integrated business/enterprise software solutions. Recognized as a proficient problem solver with a good logical and abstract reasoning abilities enabling <span class="customize-text-color font-weight-bold">effective troubleshooting, debugging and providing solutions </span>to the technical issues.</span>
 							</div>
 							<div
 								class="mt-10 mr-10"
@@ -68,6 +68,8 @@
 							>
 								<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
 								<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
+								<a href="https://wa.me/+60169016343" class="white--text"><span class="mdi mdi-whatsapp"></span></a>
+								<a href="https://github.com/jcleong1223?tab=repositories" class="white--text"><span class="mdi mdi-github"></span></a>
 							</div>
 						</div>
 					</v-col>

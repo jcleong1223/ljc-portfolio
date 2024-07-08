@@ -224,7 +224,7 @@
 					<!-- <div>Picture section</div> -->
 					<v-row class="justify-start">
 						<div class="text-justify font-size-text font-family-primary mx-0">
-							<div v-html="project.description"></div>
+							<div style="padding-right: 150px;" v-html="project.description"></div>
 						</div>
 					</v-row>
 				</v-container>
