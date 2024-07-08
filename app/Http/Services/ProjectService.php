@@ -19,7 +19,7 @@ class ProjectService
 					'seq_value' => $key+1,
 				]);
 
-				$mediaContent->syncResizedImageFor('content', $item, ModelableFile::MODULE_PATH_PORTFOLIO_CONTENT_IMAGE, 1000);
+				$mediaContent->syncResizedImageFor('content', $item, ModelableFile::MODULE_PATH_PORTFOLIO_CONTENT_IMAGE, 2000);
 				$collection->push($mediaContent);
 			}
 			else

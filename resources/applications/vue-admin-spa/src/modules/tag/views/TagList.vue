@@ -59,9 +59,9 @@
 							v-if="item.web_image"
 							max-width="150"
 							:aspect-ratio="16/9"
-							:src="item.web_image.file_url"
+							:src="item.icon"
 							class="clickable"
-							@click="viewImage(item.web_image)"
+							@click="viewImage(item.icon)"
 						></v-img>
 					</template>
 					<template #[`item.status`]="{ item }">
@@ -329,7 +329,7 @@ export default{
 			]
 		},
 		viewImage(img){
-			this.viewImageSrc = img.file_url
+			this.viewImageSrc = img
 			this.viewImageDialog = true
 		},
 	}

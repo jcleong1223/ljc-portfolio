@@ -13,7 +13,6 @@
 							icon="mdi-account-multiple" color="#527853"
 						></overview-card>
 					</router-link>
-
 				</v-col>
 				<v-col cols="12" sm="6" md="4">
 					<router-link :to="{ name: 'project.list'}" class="text-decoration-none">
@@ -23,7 +22,6 @@
 							icon="mdi-billboard" color="#527853"
 						></overview-card>
 					</router-link>
-
 				</v-col>
 				<v-col cols="12" sm="6" md="4">
 					<router-link :to="{ name: 'certificate.list'}" class="text-decoration-none">
@@ -33,7 +31,6 @@
 							icon="mdi-certificate" color="#527853"
 						></overview-card>
 					</router-link>
-
 				</v-col>
 				<v-col cols="12" sm="6" md="4">
 					<router-link :to="{ name: 'tag.list'}" class="text-decoration-none">
@@ -43,7 +40,6 @@
 							icon="mdi-tag" color="#527853"
 						></overview-card>
 					</router-link>
-
 				</v-col>
 				<!-- <v-col cols="12" sm="6" md="4">
 					<router-link :to="{ name: 'game.list'}" class="text-decoration-none">

@@ -19,6 +19,7 @@ class CreateTagsTable extends Migration
             $table->tinyInteger('level')->nullable(); // 1: Tag for User, 2: Tag for Project
             $table->string('icon')->nullable();
             $table->tinyInteger('status')->default(1); // 1:Active,0:Inactive
+            $table->tinyInteger('my_skill')->default(0); // 1:True,0:False. If true, then can display in About Me "My Skills" section
             $table->timestamps();
             $table->softDeletes();
         });

@@ -40,10 +40,11 @@ class TagController extends Controller
                 'title' => $payload['title'],
                 'level' => $payload['level'],
                 'status' => $payload['status'],
-                'seq_value' => $payload['seq_value']
+                'my_skill' => 0,
+                'seq_value' => $payload['seq_value'],
             ]);
 
-            $tag->syncResizedImageFor('webImage', $payload['web_image'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
+            //$tag->syncResizedImageFor('webImage', $payload['web_image'], ModelableFile::MODULE_PATH_TAG_WEB_IMAGE, 2000);
 
             return $tag;
         });

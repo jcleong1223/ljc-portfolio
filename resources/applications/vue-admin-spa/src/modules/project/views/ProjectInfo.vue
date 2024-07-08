@@ -145,7 +145,7 @@
 <script>
 // import ServiceForm from "./ServiceForm.vue"
 import WDataBlock from "@shared/widgets/DataBlock/WDataBlock.vue"
-import WDropdownMenu from "@shared/widgets/WDropdownMenu.vue"
+// import WDropdownMenu from "@shared/widgets/WDropdownMenu.vue"
 import { resourceMixin } from "@src/mixins/ResourceMixin"
 import { formActionMixin } from "@src/mixins/FormActionMixin"
 import { errorHandlerMixin } from "@src/mixins/ErrorHandlerMixin"
@@ -156,7 +156,7 @@ export default{
 	components:{
 		// ServiceForm,
 		WDataBlock,
-		WDropdownMenu,
+		// WDropdownMenu,
 	},
 	mixins: [
 		resourceMixin,

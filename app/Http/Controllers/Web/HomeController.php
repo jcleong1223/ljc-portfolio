@@ -19,6 +19,11 @@ class HomeController extends Controller
 		$image = '/images/og.png';
 		$description = "Welcome to $title.";
 
+		// if($any == "project-detail/6")
+		// {
+		// 	$title = "Coffee Brand";
+		// }
+
 		$data = [
 			'title' => $title,
 			'image' => $image,
@@ -94,5 +99,10 @@ class HomeController extends Controller
 		];
 
 		return self::successResponse('Success', $result);
+	}
+
+	public function spaProductDetail()
+	{
+		
 	}
 }
