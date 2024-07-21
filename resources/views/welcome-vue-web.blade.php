@@ -10,7 +10,7 @@
     <title>{{ $title ?? '' }}</title>
     <meta name="robots" content="index">
     <meta name="description" content="{{ $description ?? '' }}">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/ljc-logo-white.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/ljc-square-logo-w.png" />
 
     <!-- Facebook OpenGraph -->
     <meta property="fb:app_id" content=""/>
