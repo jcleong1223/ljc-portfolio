@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
 	{
 		// $schedule->command('inspire')->hourly();
 
-		$telescope_prune_days = 31 * 24;
+		$telescope_prune_days = 1 * 24;
 		$schedule->command('telescope:prune --hours=' . $telescope_prune_days)->dailyAt('02:00'); // daily at 2am
 	}
 
