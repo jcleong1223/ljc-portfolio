@@ -64,7 +64,7 @@
 							fade
 							:autoplay="false"
 							:bullets="true"
-							fixed-height="550px"
+							fixed-height="600px"
 							@slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
 						>
 							<vueper-slide
