@@ -20,6 +20,7 @@ class CreatePortfolioProjectsTable extends Migration
 			$table->longText('description');
             $table->string('website_url', 150)->nullable();
             $table->tinyInteger('status')->default(1); // 1:Active,0:Inactive
+            $table->unsignedInteger('seq_value')->default(1);
             $table->date('project_date')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -42,7 +42,8 @@ class HomeController extends Controller
 						'tags'
 						// 'mediaContents.content',
 					])
-					->orderBy('created_at', 'desc')
+					// ->orderBy('created_at', 'desc')
+					->orderBy('seq_value', 'DESC')
 					->get();
 
 		$result = [

@@ -27,7 +27,7 @@ class ServiceController extends Controller
 			'image',
 			'mediaContents',
 		]);
-		dd($result);
+
 		return self::successResponse('Success', $result);
 	}
 

@@ -23,6 +23,7 @@ class PortfolioProject extends Model
     protected $fillable = [
         'title',
         'website_url',
+        'seq_value',
         'short_description',
         'description',
         'status',
