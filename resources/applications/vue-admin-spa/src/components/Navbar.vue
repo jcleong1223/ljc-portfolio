@@ -121,49 +121,7 @@
 				</v-row>
 				<v-divider></v-divider>
 			</template>
-			<template v-for="(group,i) in route_groups">
-				<v-list
-					v-if="group.routes.length > 0"
-					:key="i"
-					dense flat
-					class="py-0"
-				>
-					<v-subheader v-if="group.title!=null">
-						{{ group.title }}
-					</v-subheader>
-					<template v-for="item in group.routes">
-						<template v-if="item.sub">
-							<v-list-group
-								:key="item.title"
-								:group="item.namespace"
-								:prepend-icon="item.icon"
-								append-icon="mdi-menu-down"
-								color="primary"
-								no-action
-							>
-								<template #activator>
-									<v-list-item-content>
-										<v-list-item-title>{{ item.title }}</v-list-item-title>
-									</v-list-item-content>
-								</template>
-								<v-list-item v-for="child in item.sub" :key="child.title" :to="child.to">
-									<v-list-item-title>{{ child.title }}</v-list-item-title>
-								</v-list-item>
-							</v-list-group>
-						</template>
-
-						<v-list-item
-							v-else
-							:key="item.title"
-							:to="item.to"
-							active-class="primary--text"
-						>
-							<v-list-item-icon><v-icon>{{ item.icon }}</v-icon></v-list-item-icon>
-							<v-list-item-title>{{ item.title }}</v-list-item-title>
-						</v-list-item>
-					</template>
-				</v-list>
-			</template>
+			
 			<template #append>
 				<div
 					class="pa-4 text-caption text-center relative"
@@ -196,10 +154,9 @@ export default {
 	// 	}
 	// },
 	created(){
-		this.getNavRoute()
 		this.poweredBy = {
 			text: "© 2024 LJC. All rights reserved.",
-			href: "https://www.etctech.com.my/",
+			href: "",
 		}
 	},
 	methods: {
