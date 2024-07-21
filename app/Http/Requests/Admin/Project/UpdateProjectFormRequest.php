@@ -27,7 +27,7 @@ class UpdateProjectFormRequest extends FormRequest
 			'title' => ['required', 'max:100'],
 			'website_url' => ['nullable', 'max:150'],
 			'short_description' => ['required', 'max:300'],
-			'description' => ['required', 'max:1500'],
+			'description' => ['required', 'max:3200'],
 			'status' => ['required', 'in:0,1'],
 			'seq_value' => ['required', 'integer', 'min:1'],
 			'media_contents' => ['nullable', 'array'],
