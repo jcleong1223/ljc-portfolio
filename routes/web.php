@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{any?}', [HomeController::class, 'spa'])->where('any', '^(?!\/)[\/\w\.-]*')->name("web-spa"); // else return SPA view
+Route::get('/project-detail/{id}', [HomeController::class, 'spaProductDetail'])->name("web-spa"); // SEO for project details
