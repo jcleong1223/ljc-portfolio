@@ -53,11 +53,12 @@ export default {
 	},
 	methods:{
 		setTheme(){
-			let theme = localStorage.getItem("dark-theme")
-			if(theme){
-				let isDarkTheme = JSON.parse(theme)
-				this.$vuetify.theme.dark = isDarkTheme;
-			}
+			// let theme = localStorage.getItem("dark-theme")
+			// if(theme){
+			// 	let isDarkTheme = JSON.parse(theme)
+			// 	this.$vuetify.theme.dark = isDarkTheme;
+			// }
+			this.$vuetify.theme.dark = true;
 		},
 		setDocLocale(){
 			let getHTMLTag = document.documentElement;
