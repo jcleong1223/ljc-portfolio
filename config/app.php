@@ -233,6 +233,6 @@ return [
 
 	// Others
 	'contact_us' => [
-		'receiver_email' => env('CONTACT_US_RECEIVER_EMAIL', 'jedi@etctech.com.my'),
+		'receiver_email' => env('CONTACT_US_RECEIVER_EMAIL', 'adminljc@equalciety.com'),
 	],
 ];
