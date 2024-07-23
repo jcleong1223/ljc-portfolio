@@ -132,7 +132,7 @@ export default {
 		},
 
 		viewResume(){
-			window.open("https://docs.google.com/document/d/1TVsBZ9qdODi-KotzZ-KWr-jFbjAR_YhL-Rt1WG4o5MY/edit?usp=sharing");
+			window.open("https://www.canva.com/design/DAGLxg-FQBQ/b-3o6n334hRClCNSslo5BQ/view?utm_content=DAGLxg-FQBQ&utm_campaign=designshare&utm_medium=link&utm_source=editor");
 		},
 
 		toMainPage(){
