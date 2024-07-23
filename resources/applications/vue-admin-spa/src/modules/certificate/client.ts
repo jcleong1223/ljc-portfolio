@@ -1,5 +1,5 @@
 import axios from 'axios';
-const prefix = "/project"
+const prefix = "/certificate"
 
 const projectClient = {
 
