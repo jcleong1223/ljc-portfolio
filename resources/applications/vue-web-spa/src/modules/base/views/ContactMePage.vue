@@ -148,7 +148,7 @@
 											</h2>
 											<hr class="mt-1 mb-4" />
 											<span>
-												I'm available for freelance work. Feel free to contact me at<br>Email: <a href="mailto:leongjc1223@gmail.com" style="" class="customize-text-colour">leongjc1223@gmail.com</a><br>Phone: <a class="customize-text-colour" href="https://wa.me/+60169016343" target="_blank">+60169016343</a>
+												I'm available for freelance work. Feel free to contact me at<br>Email: <a href="mailto:leongjc1223@gmail.com" style="" class="customize-text-colour">leongjc1223@gmail.com</a><br>Phone: <a class="customize-text-colour" href="https://t.me/jcleong23" target="_blank">Telegram Jia Chong</a>
 											</span>
 										</v-col>
 										<v-col
@@ -189,7 +189,7 @@ export default {
 	data() {
 		return {
 			contactForm: {
-				// recaptcha: '',
+				recaptcha: '',
 			},
 			errors: {},
 			loading: false,
@@ -202,11 +202,18 @@ export default {
 	created() {
 		//
 	},
+	mounted(){
+		this.initRecaptcha();
+	},
 	methods: {
+		async initRecaptcha(){
+			await this.$recaptchaLoaded()
+		},
+
 		async submitForm(item){
 
-			// const token = await this.$recaptcha('submit')
-			// this.form.recaptcha = token
+			const token = await this.$recaptcha('submit')
+			this.contactForm.recaptcha = token
 
 			this.submitContactInfo(item);
 		},

@@ -68,7 +68,7 @@
 							>
 								<a href="https://www.linkedin.com/in/leong-jia-chong-b0762a190/" class="white--text" target="_blank"><span class="mdi mdi-linkedin"></span></a>
 								<a href="mailto:leongjc1223@gmail.com" class="white--text"><span class="mdi mdi-email"></span></a>
-								<a href="https://wa.me/+60169016343" class="white--text"><span class="mdi mdi-whatsapp"></span></a>
+								<a href="https://t.me/jcleong23" class="white--text"><span class="mdi mdi-telegram"></span></a>
 								<a href="https://github.com/jcleong1223?tab=repositories" class="white--text"><span class="mdi mdi-github"></span></a>
 							</div>
 						</div>
